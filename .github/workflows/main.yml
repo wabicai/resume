@@ -11,7 +11,7 @@ on:
         description: 'Test scenario tags'
   push:
     branches:
-      - master  # Set a branch name to trigger deployment
+      - main  # Set a branch name to trigger deployment
   pull_request:
 
 jobs:
