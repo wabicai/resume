@@ -1,15 +1,10 @@
-name: Manual Trigger
+name: GitHub Pages
 
 on:
-  # 手动触发事件
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'
+  push:
+    branches:
+      - master  # Set a branch name to trigger deployment
+  pull_request:
 
 jobs:
   deploy:
@@ -24,20 +19,19 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-  - name: Setup Hugo
-    uses: peaceiris/actions-hugo@v2
-    with:
-      hugo-version: '0.98.0'
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.98.0'
 
-  - name: Build
-    run: hugo --minify
+      - name: Build
+        run: hugo --minify
 
-  - name: Deploy
-    uses: peaceiris/actions-gh-pages@v3
-    with:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
-      deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-      external_repository: allworldg/allworldg.github.io
-      publish_branch: master
-      publish_dir: ./public
-	#  cname: criwits.top
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: wabicai/resume.github.io
+          publish_branch: master
+          publish_dir: ./public
+#           cname: criwits.top
