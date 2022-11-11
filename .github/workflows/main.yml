@@ -1,6 +1,14 @@
 name: GitHub Pages
 
 on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'test'
+      tags:
+        description: 'Test scenario tags'
   push:
     branches:
       - main  # Set a branch name to trigger deployment
