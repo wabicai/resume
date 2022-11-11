@@ -12,10 +12,32 @@ on:
         description: 'Test scenario tags'
 
 jobs:
-  printInputs:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - run: |
-          echo "Log level: ${{ github.event.inputs.logLevel }}"
-          echo "Tags: ${{ github.event.inputs.tags }}"
-          echo "Inputs: ${{ toJson(github.event.inputs) }}"
+      - uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+  - name: Setup Hugo
+    uses: peaceiris/actions-hugo@v2
+    with:
+      hugo-version: '0.98.0'
+
+  - name: Build
+    run: hugo --minify
+
+  - name: Deploy
+    uses: peaceiris/actions-gh-pages@v3
+    with:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+      external_repository: allworldg/allworldg.github.io
+      publish_branch: master
+      publish_dir: ./public
+	#  cname: criwits.top
