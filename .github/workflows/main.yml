@@ -4,9 +4,6 @@ name: github pages # 工作流的名称
 # 其他的事件还有：pull_request/page_build/release
 # 可参考：https://help.github.com/en/actions/reference/events-that-trigger-workflows
 on:	
-  push:
-    branches:
-    - source
   workflow_dispatch:
     inputs:
           logLevel:
@@ -15,6 +12,9 @@ on:
             default: 'warning'
           tags:
             description: 'Test scenario tags'
+  push:
+    branches:
+    - source
 # jobs 即工作流中的执行任务
 jobs:
   build-deploy: # job-id
