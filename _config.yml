@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: wabicai的私人空间
+subtitle: '（仅供超级无敌爆炸可爱pengxuanxuan视察以及自我提升使用'
 description: ''
-keywords:
-author: John Doe
+keywords: '前端'
+author: wabicai
 language: en
 timezone: ''
 
@@ -121,10 +121,25 @@ tag_generator:
   per_page: 20
   order_by: -date
 
-## feed   
+# feed   
 feed:
   type: atom
   path: atom.xml
   limit: 20
   hub:
   content:
+
+# 热更新
+server:
+  compress: true
+# 多级目录
+toc:
+  enable: true
+  # Automatically add list number to toc.
+  number: true
+  # If true, all words will placed on next lines if header width longer then sidebar width.
+  wrap: true
+  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+  expand_all: true
+  # Maximum heading depth of generated toc.
+  max_depth: 6
