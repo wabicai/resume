@@ -108,6 +108,10 @@ deploy:
   branch: main
 
 # 自动生成分类
+auto_category:
+ enable: true
+ depth:
+ 
 category_generator:
   per_page: 20
   order_by: -date
