@@ -41,7 +41,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -106,3 +106,21 @@ deploy:
   type: git
   repo: https://github.com/wabicai/resume.github.io.git
   branch: main
+
+# 自动生成分类
+category_generator:
+  per_page: 20
+  order_by: -date
+
+# 自动生成Tag
+tag_generator:
+  per_page: 20
+  order_by: -date
+
+## feed   
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
