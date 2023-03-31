@@ -26,7 +26,8 @@
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-theme-landscape": "^0.0.3"
+    "hexo-theme-landscape": "^0.0.3",
+    "treer": "^1.0.4"
   },
   "devDependencies": {
     "hexo-browsersync": "^0.3.0"
