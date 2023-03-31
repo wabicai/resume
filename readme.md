@@ -2,7 +2,7 @@
 # 常见命令
 ## 开始编写
 ```js
-npm run server：启动hexo服务
+npm run server // 启动hexo服务
 ```
 ## 列举文件结构
 ```js
