@@ -1,5 +1,4 @@
 
-name: Hexo Deploy
 name: Build and Deploy
 on: [push]
 jobs:
