@@ -29,3 +29,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.HEXO_DEPLOY_KEY }} # 也就是我们刚才生成的 secret
         BRANCH: gh-pages # 部署到 gh-pages 分支，因为 master 分支存放的一般是源码，而 gh-pages 分支则用来存放生成的静态文件
         FOLDER: docs/.vuepress/dist # vuepress 生成的静态文件存放的地方
+
