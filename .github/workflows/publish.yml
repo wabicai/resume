@@ -12,7 +12,7 @@ jobs:
       uses: jenkey2011/vuepress-deploy@master
       env:
         ACCESS_TOKEN: ${{ secrets.HEXO_DEPLOY_KEY }}
-        TARGET_REPO: username/repo
+        TARGET_REPO: wabicai/resume
         TARGET_BRANCH: master
         BUILD_SCRIPT: npm install && npm run build
         BUILD_DIR: docs/.vuepress/dist
