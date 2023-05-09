@@ -18,8 +18,4 @@ treer - d < 指定路径 > //查看指定路径的目录树
 ## 新建页面
 
 ```bash
-hexo new [layout] <title>
-post	source/_posts
-page	source
-draft	source/_drafts
 ```
