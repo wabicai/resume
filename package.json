@@ -11,8 +11,9 @@
     "vuepress-plugin-auto-sidebar": "^2.3.2"
   },
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "vuepress dev docs --temp .temp",
+    "build": "vuepress build docs",
+    "doc": "vuepress nav docs"
   },
   "repository": {
     "type": "git",
