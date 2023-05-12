@@ -3,7 +3,7 @@ home: true
 heroText: 一个分享各类资源的地方
 tagline: 公众号：资料分享大师
 actionText: 查看资源 →
-actionLink: /JavaScript/test
+actionLink: /JavaScript/1.闭包相关
 features:
 - title: 网盘资源
   details: 所有网盘资源均来自互联网，本网站不生产任何网盘资源，网盘资源是否失效需要自行判断。

@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  markdown-it-disable-url-encode:
+    specifier: ^1.0.1
+    version: 1.0.1(mdurl@1.0.1)
   pnpm:
     specifier: ^8.4.0
     version: 8.4.0
@@ -6026,6 +6029,14 @@ packages:
     resolution: {integrity: sha512-IxPOaq2LzrGuFGyYq80zaorXReh2ZHGFOB1/Hen429EJL1XkPI3FJTpx9TsJeua+j2qTru4h3W1TiCRdeivMmA==}
     dev: true
 
+  /markdown-it-disable-url-encode@1.0.1(mdurl@1.0.1):
+    resolution: {integrity: sha512-M/0GhhOzQcS8d2aFXF5SBSPjEmvfovkCgmVgZUm2B9nStEAVCb8bCfYVPaHNfem6M0TrBcdruF/PH1hKxwPIUw==}
+    peerDependencies:
+      mdurl: '*'
+    dependencies:
+      mdurl: 1.0.1
+    dev: false
+
   /markdown-it-emoji@1.4.0:
     resolution: {integrity: sha512-QCz3Hkd+r5gDYtS2xsFXmBYrgw6KuWcJZLCEkdfAuwzZbShCmCfta+hwAMq4NX/4xPzkSHduMKgMkkPUJxSXNg==}
     dev: true
@@ -6064,7 +6075,6 @@ packages:
 
   /mdurl@1.0.1:
     resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
-    dev: true
 
   /media-typer@0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
