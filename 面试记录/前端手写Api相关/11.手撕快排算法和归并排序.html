@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>快排算法思想： | wabicai的个人空间</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <meta name="description" content="前端、后端、互联网前沿学习等等">
+    
+    <link rel="preload" href="/assets/css/0.styles.e8e4f3a3.css" as="style"><link rel="preload" href="/assets/js/app.3cd18c78.js" as="script"><link rel="preload" href="/assets/js/2.c01b3cf8.js" as="script"><link rel="preload" href="/assets/js/178.2477c888.js" as="script"><link rel="prefetch" href="/assets/js/10.aee50063.js"><link rel="prefetch" href="/assets/js/100.86c754c1.js"><link rel="prefetch" href="/assets/js/101.a39e7c4a.js"><link rel="prefetch" href="/assets/js/102.39e129d8.js"><link rel="prefetch" href="/assets/js/103.323acc08.js"><link rel="prefetch" href="/assets/js/104.088cd3a6.js"><link rel="prefetch" href="/assets/js/105.e776874b.js"><link rel="prefetch" href="/assets/js/106.b7e090aa.js"><link rel="prefetch" href="/assets/js/107.79dd377f.js"><link rel="prefetch" href="/assets/js/108.e9a6d00a.js"><link rel="prefetch" href="/assets/js/109.7590a459.js"><link rel="prefetch" href="/assets/js/11.18f3c5d8.js"><link rel="prefetch" href="/assets/js/110.2a518e41.js"><link rel="prefetch" href="/assets/js/111.d2c13528.js"><link rel="prefetch" href="/assets/js/112.6feb2a18.js"><link rel="prefetch" href="/assets/js/113.c29abcb5.js"><link rel="prefetch" href="/assets/js/114.21f70e69.js"><link rel="prefetch" href="/assets/js/115.ed4d71e0.js"><link rel="prefetch" href="/assets/js/116.7d81b47b.js"><link rel="prefetch" href="/assets/js/117.9d3119b0.js"><link rel="prefetch" href="/assets/js/118.835c0588.js"><link rel="prefetch" href="/assets/js/119.2b6d6eca.js"><link rel="prefetch" href="/assets/js/12.cc9823d3.js"><link rel="prefetch" href="/assets/js/120.aab799ce.js"><link rel="prefetch" href="/assets/js/121.1433bbbc.js"><link rel="prefetch" href="/assets/js/122.c2cc49f6.js"><link rel="prefetch" href="/assets/js/123.e5b342c3.js"><link rel="prefetch" href="/assets/js/124.1fc1907e.js"><link rel="prefetch" href="/assets/js/125.55abf446.js"><link rel="prefetch" href="/assets/js/126.6e43d891.js"><link rel="prefetch" href="/assets/js/127.57029f26.js"><link rel="prefetch" href="/assets/js/128.c4b0ed3c.js"><link rel="prefetch" href="/assets/js/129.c0443bcd.js"><link rel="prefetch" href="/assets/js/13.270d0f95.js"><link rel="prefetch" href="/assets/js/130.ae9afc14.js"><link rel="prefetch" href="/assets/js/131.6459bb78.js"><link rel="prefetch" href="/assets/js/132.867b257b.js"><link rel="prefetch" href="/assets/js/133.77f15d7c.js"><link rel="prefetch" href="/assets/js/134.71c04ebf.js"><link rel="prefetch" href="/assets/js/135.219cbf3e.js"><link rel="prefetch" href="/assets/js/136.ceeb8a80.js"><link rel="prefetch" href="/assets/js/137.5a79037c.js"><link rel="prefetch" href="/assets/js/138.35932692.js"><link rel="prefetch" href="/assets/js/139.20328eac.js"><link rel="prefetch" href="/assets/js/14.b22133ab.js"><link rel="prefetch" href="/assets/js/140.553ff5b0.js"><link rel="prefetch" href="/assets/js/141.1e6a96f3.js"><link rel="prefetch" href="/assets/js/142.bc627569.js"><link rel="prefetch" href="/assets/js/143.f0e06384.js"><link rel="prefetch" href="/assets/js/144.5d7ebf2b.js"><link rel="prefetch" href="/assets/js/145.ff97ba83.js"><link rel="prefetch" href="/assets/js/146.71eafdfe.js"><link rel="prefetch" href="/assets/js/147.da611df1.js"><link rel="prefetch" href="/assets/js/148.2e834f73.js"><link rel="prefetch" href="/assets/js/149.5581ef60.js"><link rel="prefetch" href="/assets/js/15.3c80b963.js"><link rel="prefetch" href="/assets/js/150.122fa39b.js"><link rel="prefetch" href="/assets/js/151.6f3806f4.js"><link rel="prefetch" href="/assets/js/152.4c60df1d.js"><link rel="prefetch" href="/assets/js/153.95fbddf0.js"><link rel="prefetch" href="/assets/js/154.6fc58e2e.js"><link rel="prefetch" href="/assets/js/155.6ef5ab79.js"><link rel="prefetch" href="/assets/js/156.15db2ee7.js"><link rel="prefetch" href="/assets/js/157.a89f4df0.js"><link rel="prefetch" href="/assets/js/158.2344876d.js"><link rel="prefetch" href="/assets/js/159.f5339e22.js"><link rel="prefetch" href="/assets/js/16.ccb52a9f.js"><link rel="prefetch" href="/assets/js/160.e123e70c.js"><link rel="prefetch" href="/assets/js/161.6176bb03.js"><link rel="prefetch" href="/assets/js/162.4f0ca986.js"><link rel="prefetch" href="/assets/js/163.eb4ff119.js"><link rel="prefetch" href="/assets/js/164.6ee75976.js"><link rel="prefetch" href="/assets/js/165.606cff60.js"><link rel="prefetch" href="/assets/js/166.cd554076.js"><link rel="prefetch" href="/assets/js/167.863a511c.js"><link rel="prefetch" href="/assets/js/168.8a8a0f0e.js"><link rel="prefetch" href="/assets/js/169.3653819c.js"><link rel="prefetch" href="/assets/js/17.0f3abc51.js"><link rel="prefetch" href="/assets/js/170.7f192ac0.js"><link rel="prefetch" href="/assets/js/171.ba676be0.js"><link rel="prefetch" href="/assets/js/172.e88d7b4f.js"><link rel="prefetch" href="/assets/js/173.b8a45e8a.js"><link rel="prefetch" href="/assets/js/174.5a25dcb7.js"><link rel="prefetch" href="/assets/js/175.b57ca385.js"><link rel="prefetch" href="/assets/js/176.620d9eb7.js"><link rel="prefetch" href="/assets/js/177.e5274e1a.js"><link rel="prefetch" href="/assets/js/179.a3da0b27.js"><link rel="prefetch" href="/assets/js/18.c74099e4.js"><link rel="prefetch" href="/assets/js/180.1fccbc04.js"><link rel="prefetch" href="/assets/js/181.5c5bc686.js"><link rel="prefetch" href="/assets/js/182.0bfa2b46.js"><link rel="prefetch" href="/assets/js/183.3540e8a2.js"><link rel="prefetch" href="/assets/js/184.e090c6d0.js"><link rel="prefetch" href="/assets/js/185.de31e7ad.js"><link rel="prefetch" href="/assets/js/186.ac9e5712.js"><link rel="prefetch" href="/assets/js/187.50643f77.js"><link rel="prefetch" href="/assets/js/188.f2c1c601.js"><link rel="prefetch" href="/assets/js/189.bf531838.js"><link rel="prefetch" href="/assets/js/19.596ed989.js"><link rel="prefetch" href="/assets/js/190.9db0aba4.js"><link rel="prefetch" href="/assets/js/191.a1a1ae55.js"><link rel="prefetch" href="/assets/js/192.50bbc086.js"><link rel="prefetch" href="/assets/js/193.f665815d.js"><link rel="prefetch" href="/assets/js/194.623e86c4.js"><link rel="prefetch" href="/assets/js/195.d8ca5c4d.js"><link rel="prefetch" href="/assets/js/196.62cc4618.js"><link rel="prefetch" href="/assets/js/197.8d80f65c.js"><link rel="prefetch" href="/assets/js/20.1a51f404.js"><link rel="prefetch" href="/assets/js/21.fcd6aaa9.js"><link rel="prefetch" href="/assets/js/22.d0226a61.js"><link rel="prefetch" href="/assets/js/23.f9e9dfb1.js"><link rel="prefetch" href="/assets/js/24.a0b405ea.js"><link rel="prefetch" href="/assets/js/25.0fbbde56.js"><link rel="prefetch" href="/assets/js/26.9a631f9f.js"><link rel="prefetch" href="/assets/js/27.fcbb0af3.js"><link rel="prefetch" href="/assets/js/28.594abc90.js"><link rel="prefetch" href="/assets/js/29.5be03aa4.js"><link rel="prefetch" href="/assets/js/3.82ac21a6.js"><link rel="prefetch" href="/assets/js/30.144fe532.js"><link rel="prefetch" href="/assets/js/31.db068608.js"><link rel="prefetch" href="/assets/js/32.8f595803.js"><link rel="prefetch" href="/assets/js/33.adb00517.js"><link rel="prefetch" href="/assets/js/34.e98063a1.js"><link rel="prefetch" href="/assets/js/35.2d6f8520.js"><link rel="prefetch" href="/assets/js/36.a6f06a10.js"><link rel="prefetch" href="/assets/js/37.2cac395d.js"><link rel="prefetch" href="/assets/js/38.40175614.js"><link rel="prefetch" href="/assets/js/39.2bec3c30.js"><link rel="prefetch" href="/assets/js/4.43690b61.js"><link rel="prefetch" href="/assets/js/40.56a5f511.js"><link rel="prefetch" href="/assets/js/41.5d96bd79.js"><link rel="prefetch" href="/assets/js/42.18bc8c46.js"><link rel="prefetch" href="/assets/js/43.c442f08d.js"><link rel="prefetch" href="/assets/js/44.2a7cc5e5.js"><link rel="prefetch" href="/assets/js/45.1ef7d150.js"><link rel="prefetch" href="/assets/js/46.db123112.js"><link rel="prefetch" href="/assets/js/47.17ff8729.js"><link rel="prefetch" href="/assets/js/48.45cb9be7.js"><link rel="prefetch" href="/assets/js/49.3557a61f.js"><link rel="prefetch" href="/assets/js/5.7c13b7b3.js"><link rel="prefetch" href="/assets/js/50.7a44000f.js"><link rel="prefetch" href="/assets/js/51.f5f5d5f7.js"><link rel="prefetch" href="/assets/js/52.37e35a16.js"><link rel="prefetch" href="/assets/js/53.822ef5da.js"><link rel="prefetch" href="/assets/js/54.36db3aee.js"><link rel="prefetch" href="/assets/js/55.e0474b32.js"><link rel="prefetch" href="/assets/js/56.07398bf4.js"><link rel="prefetch" href="/assets/js/57.26dcb5a5.js"><link rel="prefetch" href="/assets/js/58.4ac274c6.js"><link rel="prefetch" href="/assets/js/59.c15216f9.js"><link rel="prefetch" href="/assets/js/6.cef30f1c.js"><link rel="prefetch" href="/assets/js/60.acea1d6f.js"><link rel="prefetch" href="/assets/js/61.3a4d59ac.js"><link rel="prefetch" href="/assets/js/62.5fe9a979.js"><link rel="prefetch" href="/assets/js/63.5ab91581.js"><link rel="prefetch" href="/assets/js/64.5404759b.js"><link rel="prefetch" href="/assets/js/65.b4d702e7.js"><link rel="prefetch" href="/assets/js/66.22ec626b.js"><link rel="prefetch" href="/assets/js/67.0b1bd25e.js"><link rel="prefetch" href="/assets/js/68.82b15680.js"><link rel="prefetch" href="/assets/js/69.fae12b0c.js"><link rel="prefetch" href="/assets/js/7.250c0c54.js"><link rel="prefetch" href="/assets/js/70.f07d608d.js"><link rel="prefetch" href="/assets/js/71.a0ccfaf6.js"><link rel="prefetch" href="/assets/js/72.641eaa89.js"><link rel="prefetch" href="/assets/js/73.92224599.js"><link rel="prefetch" href="/assets/js/74.6e3b1a4b.js"><link rel="prefetch" href="/assets/js/75.e7310a05.js"><link rel="prefetch" href="/assets/js/76.472716d3.js"><link rel="prefetch" href="/assets/js/77.9c5ff55b.js"><link rel="prefetch" href="/assets/js/78.80d86dd2.js"><link rel="prefetch" href="/assets/js/79.ed619ee8.js"><link rel="prefetch" href="/assets/js/8.ff4b36aa.js"><link rel="prefetch" href="/assets/js/80.4d1c835d.js"><link rel="prefetch" href="/assets/js/81.1583a039.js"><link rel="prefetch" href="/assets/js/82.a642d9f0.js"><link rel="prefetch" href="/assets/js/83.7c1f1068.js"><link rel="prefetch" href="/assets/js/84.572dc185.js"><link rel="prefetch" href="/assets/js/85.941fb221.js"><link rel="prefetch" href="/assets/js/86.d5aeded7.js"><link rel="prefetch" href="/assets/js/87.f383b8f5.js"><link rel="prefetch" href="/assets/js/88.a55bb149.js"><link rel="prefetch" href="/assets/js/89.f7b150e5.js"><link rel="prefetch" href="/assets/js/9.7142478d.js"><link rel="prefetch" href="/assets/js/90.56e13fe1.js"><link rel="prefetch" href="/assets/js/91.b6da24a8.js"><link rel="prefetch" href="/assets/js/92.ff16c0b3.js"><link rel="prefetch" href="/assets/js/93.33a9fda8.js"><link rel="prefetch" href="/assets/js/94.e5652917.js"><link rel="prefetch" href="/assets/js/95.e12af682.js"><link rel="prefetch" href="/assets/js/96.ec72b003.js"><link rel="prefetch" href="/assets/js/97.7ae9a687.js"><link rel="prefetch" href="/assets/js/98.133dfc4e.js"><link rel="prefetch" href="/assets/js/99.61445ec1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e8e4f3a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">wabicai的个人空间</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Golang/" class="nav-link">
+  Golang
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="HTML、CSS" class="dropdown-title"><span class="title">HTML、CSS</span> <span class="arrow down"></span></button> <button type="button" aria-label="HTML、CSS" class="mobile-dropdown-title"><span class="title">HTML、CSS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/HTML、CSS/" class="nav-link">
+  HTML、CSS
+</a></li><li class="dropdown-item"><!----> <a href="/HTML、CSS/移动端/" class="nav-link">
+  移动端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/" class="nav-link">
+  Java Script
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/基础知识/" class="nav-link">
+  基础知识
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/基础知识/操作系统与数据库/" class="nav-link">
+  操作系统与数据库
+</a></li><li class="dropdown-item"><!----> <a href="/基础知识/浏览器相关/" class="nav-link">
+  浏览器相关
+</a></li><li class="dropdown-item"><!----> <a href="/基础知识/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/基础知识/设计模式/" class="nav-link">
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工作经验记录" class="dropdown-title"><span class="title">工作经验记录</span> <span class="arrow down"></span></button> <button type="button" aria-label="工作经验记录" class="mobile-dropdown-title"><span class="title">工作经验记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/SDK/2、Base模块/" class="nav-link">
+  2、Base模块
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/SDK/3、Module模块/" class="nav-link">
+  3、Module模块
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/SDK/3、Module模块/business/" class="nav-link">
+  Business
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/SDK/" class="nav-link">
+  SDK
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/SDK/3、Module模块/statistics/" class="nav-link">
+  Statistics
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/前端工程化/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/多媒体实现/" class="nav-link">
+  多媒体实现
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/小程序插件/" class="nav-link">
+  小程序插件
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/Sketch/文件加载/" class="nav-link">
+  文件加载
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/Sketch/方案设计/" class="nav-link">
+  方案设计
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/远程调试/" class="nav-link">
+  远程调试
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/" class="nav-link">
+  项目总结
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/项目方案设计/" class="nav-link">
+  项目方案设计
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架相关" class="dropdown-title"><span class="title">框架相关</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架相关" class="mobile-dropdown-title"><span class="title">框架相关</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/框架相关/Vue/Api原理/" class="nav-link">
+  Api原理
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/Vue/self-vue-master/" class="nav-link">
+  Self Vue Master
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/Vue/self-vue-master/v1/" class="nav-link">
+  V1
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/Vue/self-vue-master/v2/" class="nav-link">
+  V2
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/Vue/self-vue-master/v3/" class="nav-link">
+  V3
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/小程序/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/" class="nav-link">
+  框架相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试记录" class="dropdown-title"><span class="title">面试记录</span> <span class="arrow down"></span></button> <button type="button" aria-label="面试记录" class="mobile-dropdown-title"><span class="title">面试记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/面试记录/前端手写Api相关/self-promise/" class="nav-link">
+  Self Promise
+</a></li><li class="dropdown-item"><!----> <a href="/面试记录/前端手写Api相关/" class="nav-link">
+  前端手写Api相关
+</a></li><li class="dropdown-item"><!----> <a href="/面试记录/" class="nav-link">
+  面试记录
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Golang" class="dropdown-title"><span class="title">Golang</span> <span class="arrow down"></span></button> <button type="button" aria-label="Golang" class="mobile-dropdown-title"><span class="title">Golang</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Golang/" class="nav-link">
+  Golang
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="HTML、CSS" class="dropdown-title"><span class="title">HTML、CSS</span> <span class="arrow down"></span></button> <button type="button" aria-label="HTML、CSS" class="mobile-dropdown-title"><span class="title">HTML、CSS</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/HTML、CSS/" class="nav-link">
+  HTML、CSS
+</a></li><li class="dropdown-item"><!----> <a href="/HTML、CSS/移动端/" class="nav-link">
+  移动端
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="JavaScript" class="dropdown-title"><span class="title">JavaScript</span> <span class="arrow down"></span></button> <button type="button" aria-label="JavaScript" class="mobile-dropdown-title"><span class="title">JavaScript</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/JavaScript/" class="nav-link">
+  Java Script
+</a></li><li class="dropdown-item"><!----> <a href="/JavaScript/基础知识/" class="nav-link">
+  基础知识
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/基础知识/操作系统与数据库/" class="nav-link">
+  操作系统与数据库
+</a></li><li class="dropdown-item"><!----> <a href="/基础知识/浏览器相关/" class="nav-link">
+  浏览器相关
+</a></li><li class="dropdown-item"><!----> <a href="/基础知识/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/基础知识/设计模式/" class="nav-link">
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工作经验记录" class="dropdown-title"><span class="title">工作经验记录</span> <span class="arrow down"></span></button> <button type="button" aria-label="工作经验记录" class="mobile-dropdown-title"><span class="title">工作经验记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/SDK/2、Base模块/" class="nav-link">
+  2、Base模块
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/SDK/3、Module模块/" class="nav-link">
+  3、Module模块
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/SDK/3、Module模块/business/" class="nav-link">
+  Business
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/SDK/" class="nav-link">
+  SDK
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/SDK/3、Module模块/statistics/" class="nav-link">
+  Statistics
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/前端工程化/" class="nav-link">
+  前端工程化
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/TRTC/多媒体实现/" class="nav-link">
+  多媒体实现
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/小程序插件/" class="nav-link">
+  小程序插件
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/Sketch/文件加载/" class="nav-link">
+  文件加载
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/Sketch/方案设计/" class="nav-link">
+  方案设计
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/Tencent/远程调试/" class="nav-link">
+  远程调试
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/" class="nav-link">
+  项目总结
+</a></li><li class="dropdown-item"><!----> <a href="/工作经验记录/项目总结/项目方案设计/" class="nav-link">
+  项目方案设计
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="框架相关" class="dropdown-title"><span class="title">框架相关</span> <span class="arrow down"></span></button> <button type="button" aria-label="框架相关" class="mobile-dropdown-title"><span class="title">框架相关</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/框架相关/Vue/Api原理/" class="nav-link">
+  Api原理
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/Vue/self-vue-master/" class="nav-link">
+  Self Vue Master
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/Vue/self-vue-master/v1/" class="nav-link">
+  V1
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/Vue/self-vue-master/v2/" class="nav-link">
+  V2
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/Vue/self-vue-master/v3/" class="nav-link">
+  V3
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/小程序/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/框架相关/" class="nav-link">
+  框架相关
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试记录" class="dropdown-title"><span class="title">面试记录</span> <span class="arrow down"></span></button> <button type="button" aria-label="面试记录" class="mobile-dropdown-title"><span class="title">面试记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/面试记录/前端手写Api相关/self-promise/" class="nav-link">
+  Self Promise
+</a></li><li class="dropdown-item"><!----> <a href="/面试记录/前端手写Api相关/" class="nav-link">
+  前端手写Api相关
+</a></li><li class="dropdown-item"><!----> <a href="/面试记录/" class="nav-link">
+  面试记录
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>前端手写Api相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/面试记录/前端手写Api相关/1.Promise实现sleep.html" class="sidebar-link">/面试记录/前端手写Api相关/1.Promise实现sleep.html</a></li><li><a href="/面试记录/前端手写Api相关/11.手撕快排算法和归并排序.html" class="active sidebar-link">快排算法思想：</a></li><li><a href="/面试记录/前端手写Api相关/12.数组扁平化(flat).html" class="sidebar-link">/面试记录/前端手写Api相关/12.数组扁平化(flat).html</a></li><li><a href="/面试记录/前端手写Api相关/13.深拷贝，浅拷贝.html" class="sidebar-link">/面试记录/前端手写Api相关/13.深拷贝，浅拷贝.html</a></li><li><a href="/面试记录/前端手写Api相关/14.手写防抖节流.html" class="sidebar-link">防抖</a></li><li><a href="/面试记录/前端手写Api相关/15.手写JsonP.html" class="sidebar-link">/面试记录/前端手写Api相关/15.手写JsonP.html</a></li><li><a href="/面试记录/前端手写Api相关/16.手写一个弹窗功能.html" class="sidebar-link">/面试记录/前端手写Api相关/16.手写一个弹窗功能.html</a></li><li><a href="/面试记录/前端手写Api相关/17.函数柯里化.html" class="sidebar-link">面试原题</a></li><li><a href="/面试记录/前端手写Api相关/18.手写Object.create.html" class="sidebar-link">/面试记录/前端手写Api相关/18.手写Object.create.html</a></li><li><a href="/面试记录/前端手写Api相关/19.手写new.html" class="sidebar-link">过程</a></li><li><a href="/面试记录/前端手写Api相关/2.实现一个promise超时自动reject.html" class="sidebar-link">/面试记录/前端手写Api相关/2.实现一个promise超时自动reject.html</a></li><li><a href="/面试记录/前端手写Api相关/20.手写pormise.html" class="sidebar-link">/面试记录/前端手写Api相关/20.手写pormise.html</a></li><li><a href="/面试记录/前端手写Api相关/21.对axios进行请求封装.html" class="sidebar-link">请</a></li><li><a href="/面试记录/前端手写Api相关/22.手写call、apply、bind.html" class="sidebar-link">bind、call、apply 原理和用法</a></li><li><a href="/面试记录/前端手写Api相关/23.手写instance of.html" class="sidebar-link">/面试记录/前端手写Api相关/23.手写instance of.html</a></li><li><a href="/面试记录/前端手写Api相关/24.生成树形结构.html" class="sidebar-link">/面试记录/前端手写Api相关/24.生成树形结构.html</a></li><li><a href="/面试记录/前端手写Api相关/4.纯CSS画三角形.html" class="sidebar-link">/面试记录/前端手写Api相关/4.纯CSS画三角形.html</a></li><li><a href="/面试记录/前端手写Api相关/5.对对象进行展开赋值.html" class="sidebar-link">/面试记录/前端手写Api相关/5.对对象进行展开赋值.html</a></li><li><a href="/面试记录/前端手写Api相关/6.数组去重.html" class="sidebar-link">一、利用ES6 Set去重（ES6中最常用）</a></li><li><a href="/面试记录/前端手写Api相关/7.手写Ajax请求.html" class="sidebar-link">/面试记录/前端手写Api相关/7.手写Ajax请求.html</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="快排算法思想"><a href="#快排算法思想" class="header-anchor">#</a> <strong>快排算法思想：</strong></h1> <ol><li>在数据集之中，选择一个元素作为&quot;基准&quot;（pivot）。</li> <li>所有小于&quot;基准&quot;的元素，都移到&quot;基准&quot;的左边；所有大于&quot;基准&quot;的元素，都移到&quot;基准&quot;的右边。</li> <li>对&quot;基准&quot;左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。</li></ol> <p><strong>实现</strong></p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">//递归实现</span>
+    <span class="token keyword">function</span> <span class="token function">quickSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">/*
+         * 创建len保存数组的长度，每次获取数组的长度都要实时查询不利于性能；
+         * index作为保存取到的中间值；
+         * pivot保存比较参照物；
+         * left、right作为子数组的容器；
+         */</span>
+        <span class="token keyword">var</span> index<span class="token punctuation">,</span>
+            pivot<span class="token punctuation">,</span>
+            left <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            right <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">// 如果数组只有一位，就直接返回数组,递归的终止条件；</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
+
+        <span class="token comment">//获取中间值的索引，使用Math.floor向下取整；</span>
+        index <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 使用splice截取中间值，第一个参数为截取的索引，第二个参数为截取的长度；</span>
+        <span class="token comment">// 如果此处使用pivot=arr[index]; 那么将会出现无限递归的错误；</span>
+        <span class="token comment">// splice影响原数组，原数组长度减一；</span>
+        pivot <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 小于arr[pivot]的存到left数组里，大于arr[pivot]的存到right数组；</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>pivot <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                left<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                right<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 不断把分割的左右子数组传入quickSort，直到分割的只有一位直接返回子数组本身，递归终止；</span>
+
+        <span class="token comment">// 把每次分割的数组一层一层的用concat连接起来；</span>
+        <span class="token comment">// 每一层left里的元素都小于对应的pivot,right里的元素都大于对应的pivot；</span>
+        <span class="token keyword">return</span> <span class="token function">quickSort</span><span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>pivot<span class="token punctuation">,</span> <span class="token function">quickSort</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token comment">// 非递归算法</span>
+
+    <span class="token keyword">function</span> <span class="token function">quickSort</span><span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">/*
+         * len为数组的长度;
+         * left为需要数组中参与排序的起始点；right为数组中参与排序的终止点;
+         * left如果有传数字那么就为left，没有传参则为0；
+         * right如果有传参那么就为right，没有传参则为len-1;
+         * 有传参可能会部分排序可能不会排序，没传参默认排序整个数组;
+         * partitionIndex为分组界限;
+         */</span>
+        <span class="token keyword">var</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">,</span>
+            partitionIndex<span class="token punctuation">,</span>
+            left <span class="token operator">=</span> <span class="token keyword">typeof</span> left <span class="token operator">!==</span> <span class="token string">'number'</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> left<span class="token punctuation">,</span>
+            right <span class="token operator">=</span> <span class="token keyword">typeof</span> right <span class="token operator">!==</span> <span class="token string">'number'</span> <span class="token operator">?</span> len <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">:</span> right<span class="token punctuation">;</span>
+
+        <span class="token comment">// 如果需要排序的起始索引小于终止索引则执行排序;递归的终止条件；</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token comment">// partition的返回值作为partitionIndex来分隔数组；</span>
+            <span class="token comment">// 索引partitionIndex左边的元素均小于arr[partitionIndex]；</span>
+            <span class="token comment">// 右边的元素均大于arr[partitionIndex]；</span>
+            partitionIndex <span class="token operator">=</span> <span class="token function">partition</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 数组中小于arr[partitionIndex]的部分(索引left到partitionIndex-1)再次使用quickSort排序；</span>
+            <span class="token function">quickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> left<span class="token punctuation">,</span> partitionIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 数组中大于arr[partitionIndex]的部分(索引partitionIndex+1到right)再次使用quickSort排序；</span>
+            <span class="token function">quickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> partitionIndex <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 递归执行直到不满足left&lt;right;返回本身；</span>
+        <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">function</span> <span class="token function">partition</span><span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">/*
+         * 这部分是具体实现排序的部分；
+         * 将left赋值给pivot，作为参照物，因为left在最左边，只需要从左到右比较一遍即可判断整个数组；
+         * index索引是arr中待交换位置；
+         */</span>
+        <span class="token keyword">var</span> pivot <span class="token operator">=</span> left<span class="token punctuation">,</span>
+            index <span class="token operator">=</span> pivot <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token comment">// for循环从参照物arr[pivot]下一个元素arr[pivot+1]开始一直比较到子数组结束arr[right]；</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> index<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> right<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 循环中如果有任何小于参照物的，就将他交换到index的位置，然后index向右移动到下一个位置；</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>pivot<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> i<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                index<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">/*
+         * 因为每次都是交换完后index移动到下一个位置，所以在循环结束时，index仍为待交换的位置；
+         * 此时索引pivot+1到index-1的元素都小于参照物arr[pivot]；
+         */</span>
+
+        <span class="token comment">// 交换pivot和index-1索引的值之后index-1索引左边全都是小于arr[index-1]的元素；</span>
+        <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> pivot<span class="token punctuation">,</span> index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 返回index-1作为拆分子数组的分界线；</span>
+        <span class="token keyword">return</span> index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">/*
+     * 普通的交换，将a[i]和a[j]的数值交换；
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+     <span class="token keyword">function</span> <span class="token function">quickSort</span><span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">_quickSort</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> num<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 将整个num数组快速排序，left和right分别指向数组左右两端。</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">_quickSort</span><span class="token punctuation">(</span><span class="token parameter">num<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">[</span>left<span class="token punctuation">,</span> right<span class="token punctuation">]</span>
+        <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 将[left,right]存入数组中，类似于递归入栈</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>list<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 若list不为空，循环弹出list最后一个数组进行快排</span>
+            <span class="token keyword">var</span> now <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 弹出list末尾。(也可用list.shift()取出list第一个数组，但在数据量较大时，这种方式效率较低)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>now<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;=</span> now<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 若左右指针相遇，待排序数组长度小宇1，则无需进行快排(注意不能写成now[0]==now[1]，这里now[0]是有可能大于now[1]的</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">var</span> i <span class="token operator">=</span> now<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                j <span class="token operator">=</span> now<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                flag <span class="token operator">=</span> now<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 以下与递归方法相同，请参考上面的递归详解</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">while</span> <span class="token punctuation">(</span>num<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> num<span class="token punctuation">[</span>flag<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> j <span class="token operator">&gt;</span> flag<span class="token punctuation">)</span> j<span class="token operator">--</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&gt;=</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">while</span> <span class="token punctuation">(</span>num<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> num<span class="token punctuation">[</span>flag<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span> i<span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token keyword">let</span> temp <span class="token operator">=</span> num<span class="token punctuation">[</span>flag<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                num<span class="token punctuation">[</span>flag<span class="token punctuation">]</span> <span class="token operator">=</span> num<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                num<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> num<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                num<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+                flag <span class="token operator">=</span> i<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span>now<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> flag <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 将flag左边数组作为待排序数组，只需将左右指针放入list即可。</span>
+            list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span>flag <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> now<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 将flag右边数组作为待排序数组，只需将左右指针放入list即可。</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br></div></div><h1 id="归并排序思想"><a href="#归并排序思想" class="header-anchor">#</a> 归并排序思想</h1> <p>“归并”的意思是将两个或两个以上的有序表组合成一个新的有序表。假如初始序列含有n个记录，则可看成是n个有序的子序列，每个子序列的长度为1，然后两两归并，得到[n/2]（向上取整）个长度为2或1的有序子序列；再两两归并，……，如此重复，直到得到一个长度为n的有序序列为止，这种排序方法称为2-路归并排序。</p> <p>步骤解析：</p> <p>1、把长度为n的输入序列分成两个长度为n/2的子序列；</p> <p>2、对这两个子序列继续分为m/2的子序列，一直分下去，直为1个元素；</p> <p>3、将两个排序好的子序列合并成一个最终的排序序列。</p> <p>特点：</p> <p>速度仅次于快速排序，为稳定排序算法，一般用于总体无序，但是各子项相对有序的数列，属于分治思想，递归归并。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">//归并排序</span>
+<span class="token keyword">function</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>len <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">//首先将无序数组划分为两个数组</span>
+  <span class="token keyword">var</span> mid <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>len <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> left <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>mid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> right <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>mid<span class="token punctuation">,</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token function">mergeSort</span><span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">mergeSort</span><span class="token punctuation">(</span>right<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//递归分别对左右两部分数组进行排序合并</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//合并</span>
+<span class="token keyword">function</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token parameter">left<span class="token punctuation">,</span>right</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>left<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> right<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>left<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>right<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">//如果左边的数据小于右边的数据，将左边数据取出，放在新数组中</span>
+      result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>left<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+       result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>right<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">while</span><span class="token punctuation">(</span>left<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+     result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>left<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>right<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
+     result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>right<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">44</span><span class="token punctuation">,</span><span class="token number">38</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">47</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">36</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">mergeSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//3,5,15,26,36,38,44,47</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/面试记录/前端手写Api相关/1.Promise实现sleep.html" class="prev">
+        /面试记录/前端手写Api相关/1.Promise实现sleep.html
+      </a></span> <span class="next"><a href="/面试记录/前端手写Api相关/12.数组扁平化(flat).html">
+        /面试记录/前端手写Api相关/12.数组扁平化(flat).html
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3cd18c78.js" defer></script><script src="/assets/js/2.c01b3cf8.js" defer></script><script src="/assets/js/178.2477c888.js" defer></script>
+  </body>
+</html>
