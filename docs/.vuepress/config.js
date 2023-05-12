@@ -12,9 +12,6 @@ module.exports = {
 
     configureWebpack: {
         plugins: [],
-        output: {
-            libraryTarget: 'commonjs2'
-        },
         resolve: {
             alias: {
                 '@alias': '../img'
@@ -59,9 +56,6 @@ module.exports = {
     css: {
         requireModuleExtension: false
     },
-    head: [
-        ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }]
-    ],
     plugins: [
         ["vuepress-plugin-auto-sidebar", {
             // options,
