@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "markdown-it-disable-url-encode": "^1.0.1",
-    "pnpm": "^8.4.0"
+    "pnpm": "^8.5.0"
   },
   "devDependencies": {
     "vuepress": "^1.9.9",
