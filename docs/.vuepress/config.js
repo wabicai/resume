@@ -5,6 +5,17 @@ module.exports = {
     description: "前端、后端、互联网前沿学习等等",
     markdown: {
         lineNumbers: true,
+        extendMarkdown: md => {
+            md.use(require("markdown-it-disable-url-encode"));
+        },
+    },
+
+    configureWebpack: {
+        resolve: {
+            alias: {
+                '@alias': '../img'
+            }
+        }
     },
     plugins: [
         ["vuepress-plugin-auto-sidebar", {

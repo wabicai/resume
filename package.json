@@ -4,6 +4,7 @@
   "description": "## 开始编写",
   "main": "index.js",
   "dependencies": {
+    "markdown-it-disable-url-encode": "^1.0.1",
     "pnpm": "^8.4.0"
   },
   "devDependencies": {
@@ -13,7 +14,7 @@
   "scripts": {
     "dev": "vuepress dev docs --temp .temp",
     "build": "vuepress build docs",
-    "doc": "vuepress nav docs"
+    "doc": "vuepress nav docs -f"
   },
   "repository": {
     "type": "git",
