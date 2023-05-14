@@ -4,31 +4,27 @@ module.exports = [
     "items": [
       {
         "text": "基础知识",
-        "link": "/前端/JavaScript/基础知识/1.静态语音和非静态语音"
-      },
-      {
-        "text": "Java Script",
-        "link": "/前端/JavaScript/1.闭包相关"
-      },
-      {
-        "text": "Api原理",
-        "link": "/前端/Vue/Api原理/1.computed和watch"
+        "link": "/前端/基础知识/1.静态语言和非静态语言"
       },
       {
         "text": "HTML、CSS",
         "link": "/前端/HTML、CSS/1.垂直居中和水平居中方法总结"
       },
       {
-        "text": "用法",
-        "link": "/前端/Vue/用法/1.生命周期，钩子函数"
-      },
-      {
-        "text": "React",
-        "link": "/前端/React/1.React Hook"
+        "text": "JavaScript",
+        "link": "/前端/JavaScript/1.闭包相关"
       },
       {
         "text": "浏览器相关",
         "link": "/前端/浏览器相关/1.渲染进程中的渲染机制"
+      },
+      {
+        "text": "Vue",
+        "link": "/前端/Vue/1.生命周期，钩子函数"
+      },
+      {
+        "text": "React",
+        "link": "/前端/React/1.React Hook"
       },
       {
         "text": "小程序",
@@ -50,7 +46,7 @@ module.exports = [
     "items": [
       {
         "text": "git、shell、npm、IDE相关操作",
-        "link": "/基石/git、shell、npm、IDE相关操作/"
+        "link": "/基石/git、shell、npm、IDE相关操作/1.git"
       },
       {
         "text": "操作系统与数据库",
