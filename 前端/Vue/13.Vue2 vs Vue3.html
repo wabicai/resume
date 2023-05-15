@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>关于 Vue3 的 setup | wabicai的个人空间</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="前端、后端、互联网前沿学习等等">
+    
+    <link rel="preload" href="/assets/css/0.styles.e8e4f3a3.css" as="style"><link rel="preload" href="/assets/js/app.c79183c0.js" as="script"><link rel="preload" href="/assets/js/2.6c4cb704.js" as="script"><link rel="preload" href="/assets/js/77.011c1c0f.js" as="script"><link rel="prefetch" href="/assets/js/10.e5d79b96.js"><link rel="prefetch" href="/assets/js/100.e28a115c.js"><link rel="prefetch" href="/assets/js/101.9d1c35e6.js"><link rel="prefetch" href="/assets/js/102.60514c25.js"><link rel="prefetch" href="/assets/js/103.52843293.js"><link rel="prefetch" href="/assets/js/104.acf89969.js"><link rel="prefetch" href="/assets/js/105.3e98de16.js"><link rel="prefetch" href="/assets/js/106.9b06e3f1.js"><link rel="prefetch" href="/assets/js/107.14ae9625.js"><link rel="prefetch" href="/assets/js/108.c84041c9.js"><link rel="prefetch" href="/assets/js/109.0aa27027.js"><link rel="prefetch" href="/assets/js/11.d789d48b.js"><link rel="prefetch" href="/assets/js/110.d259ee86.js"><link rel="prefetch" href="/assets/js/111.d7b7aa93.js"><link rel="prefetch" href="/assets/js/112.af06ea0e.js"><link rel="prefetch" href="/assets/js/113.96aba956.js"><link rel="prefetch" href="/assets/js/114.a6499875.js"><link rel="prefetch" href="/assets/js/115.1f022993.js"><link rel="prefetch" href="/assets/js/116.02dbc847.js"><link rel="prefetch" href="/assets/js/117.1e315c1b.js"><link rel="prefetch" href="/assets/js/118.3a98ce6c.js"><link rel="prefetch" href="/assets/js/119.2861cae8.js"><link rel="prefetch" href="/assets/js/12.99c27879.js"><link rel="prefetch" href="/assets/js/120.c9860717.js"><link rel="prefetch" href="/assets/js/121.573801cf.js"><link rel="prefetch" href="/assets/js/122.3c7c312f.js"><link rel="prefetch" href="/assets/js/123.86afc853.js"><link rel="prefetch" href="/assets/js/124.5b79152a.js"><link rel="prefetch" href="/assets/js/125.0be6b4c4.js"><link rel="prefetch" href="/assets/js/126.06a92e22.js"><link rel="prefetch" href="/assets/js/127.5794877e.js"><link rel="prefetch" href="/assets/js/128.29ca670e.js"><link rel="prefetch" href="/assets/js/129.06171ed8.js"><link rel="prefetch" href="/assets/js/13.79877233.js"><link rel="prefetch" href="/assets/js/130.7f37e3cf.js"><link rel="prefetch" href="/assets/js/131.da5002e0.js"><link rel="prefetch" href="/assets/js/132.2a66447f.js"><link rel="prefetch" href="/assets/js/133.9b1ce6d0.js"><link rel="prefetch" href="/assets/js/134.927a20e3.js"><link rel="prefetch" href="/assets/js/135.fd80cc8f.js"><link rel="prefetch" href="/assets/js/136.5d6da090.js"><link rel="prefetch" href="/assets/js/137.1fc7b50c.js"><link rel="prefetch" href="/assets/js/138.f96b7f7c.js"><link rel="prefetch" href="/assets/js/139.63601b1f.js"><link rel="prefetch" href="/assets/js/14.149c501d.js"><link rel="prefetch" href="/assets/js/140.db4854a2.js"><link rel="prefetch" href="/assets/js/141.c14f9911.js"><link rel="prefetch" href="/assets/js/142.56dd2cff.js"><link rel="prefetch" href="/assets/js/143.fe6c71bc.js"><link rel="prefetch" href="/assets/js/144.8aaaba86.js"><link rel="prefetch" href="/assets/js/145.05da798c.js"><link rel="prefetch" href="/assets/js/146.1ea66187.js"><link rel="prefetch" href="/assets/js/147.f5a63c5d.js"><link rel="prefetch" href="/assets/js/148.66c1b995.js"><link rel="prefetch" href="/assets/js/149.1a52be98.js"><link rel="prefetch" href="/assets/js/15.c8a40689.js"><link rel="prefetch" href="/assets/js/150.92d446f3.js"><link rel="prefetch" href="/assets/js/151.b36e7cfc.js"><link rel="prefetch" href="/assets/js/152.198a0960.js"><link rel="prefetch" href="/assets/js/153.f1367498.js"><link rel="prefetch" href="/assets/js/154.64573dc9.js"><link rel="prefetch" href="/assets/js/155.9f305138.js"><link rel="prefetch" href="/assets/js/156.01ee8eea.js"><link rel="prefetch" href="/assets/js/157.825040ca.js"><link rel="prefetch" href="/assets/js/158.49281957.js"><link rel="prefetch" href="/assets/js/159.e6e8fd61.js"><link rel="prefetch" href="/assets/js/16.e5fa93f1.js"><link rel="prefetch" href="/assets/js/160.87bf58f9.js"><link rel="prefetch" href="/assets/js/161.4b217470.js"><link rel="prefetch" href="/assets/js/162.95dcdc26.js"><link rel="prefetch" href="/assets/js/163.6896eaab.js"><link rel="prefetch" href="/assets/js/164.8ba33e63.js"><link rel="prefetch" href="/assets/js/165.cdea75f0.js"><link rel="prefetch" href="/assets/js/166.519386f5.js"><link rel="prefetch" href="/assets/js/167.5e4d4fd2.js"><link rel="prefetch" href="/assets/js/168.e3fa2eb3.js"><link rel="prefetch" href="/assets/js/169.4e2257eb.js"><link rel="prefetch" href="/assets/js/17.2f4ae48a.js"><link rel="prefetch" href="/assets/js/170.a2e9de96.js"><link rel="prefetch" href="/assets/js/171.abd25d71.js"><link rel="prefetch" href="/assets/js/172.799d239c.js"><link rel="prefetch" href="/assets/js/173.232b1c46.js"><link rel="prefetch" href="/assets/js/174.414c5017.js"><link rel="prefetch" href="/assets/js/175.c2f4589e.js"><link rel="prefetch" href="/assets/js/176.c3bdad6b.js"><link rel="prefetch" href="/assets/js/177.86c97d2f.js"><link rel="prefetch" href="/assets/js/178.10b06ef3.js"><link rel="prefetch" href="/assets/js/179.10c39c8c.js"><link rel="prefetch" href="/assets/js/18.4a626565.js"><link rel="prefetch" href="/assets/js/180.fcf813f2.js"><link rel="prefetch" href="/assets/js/181.eb327d10.js"><link rel="prefetch" href="/assets/js/182.08923870.js"><link rel="prefetch" href="/assets/js/183.21d3ca61.js"><link rel="prefetch" href="/assets/js/184.6ab59269.js"><link rel="prefetch" href="/assets/js/19.0f5e0106.js"><link rel="prefetch" href="/assets/js/20.45c4a235.js"><link rel="prefetch" href="/assets/js/21.6f05a1f1.js"><link rel="prefetch" href="/assets/js/22.a1830923.js"><link rel="prefetch" href="/assets/js/23.501c2d72.js"><link rel="prefetch" href="/assets/js/24.18716049.js"><link rel="prefetch" href="/assets/js/25.72883c0d.js"><link rel="prefetch" href="/assets/js/26.e4e1e08d.js"><link rel="prefetch" href="/assets/js/27.2b690939.js"><link rel="prefetch" href="/assets/js/28.df908cf8.js"><link rel="prefetch" href="/assets/js/29.4c4e3641.js"><link rel="prefetch" href="/assets/js/3.3858ddd7.js"><link rel="prefetch" href="/assets/js/30.03dba76b.js"><link rel="prefetch" href="/assets/js/31.f406e71a.js"><link rel="prefetch" href="/assets/js/32.0934774d.js"><link rel="prefetch" href="/assets/js/33.93f7ea7c.js"><link rel="prefetch" href="/assets/js/34.3b324105.js"><link rel="prefetch" href="/assets/js/35.80f74151.js"><link rel="prefetch" href="/assets/js/36.50b8584a.js"><link rel="prefetch" href="/assets/js/37.afb39266.js"><link rel="prefetch" href="/assets/js/38.d4b72f69.js"><link rel="prefetch" href="/assets/js/39.2140f6d2.js"><link rel="prefetch" href="/assets/js/4.d3c745c6.js"><link rel="prefetch" href="/assets/js/40.aa856f0c.js"><link rel="prefetch" href="/assets/js/41.7154cfdc.js"><link rel="prefetch" href="/assets/js/42.7a640461.js"><link rel="prefetch" href="/assets/js/43.08e30500.js"><link rel="prefetch" href="/assets/js/44.9b5c8ca9.js"><link rel="prefetch" href="/assets/js/45.d8f32ae7.js"><link rel="prefetch" href="/assets/js/46.70b1b15a.js"><link rel="prefetch" href="/assets/js/47.9b60421b.js"><link rel="prefetch" href="/assets/js/48.1c6681f7.js"><link rel="prefetch" href="/assets/js/49.f942a3d9.js"><link rel="prefetch" href="/assets/js/5.5949776b.js"><link rel="prefetch" href="/assets/js/50.c9004213.js"><link rel="prefetch" href="/assets/js/51.25dff679.js"><link rel="prefetch" href="/assets/js/52.3e73b747.js"><link rel="prefetch" href="/assets/js/53.3564757d.js"><link rel="prefetch" href="/assets/js/54.c1d0eaae.js"><link rel="prefetch" href="/assets/js/55.e37278ca.js"><link rel="prefetch" href="/assets/js/56.8959c818.js"><link rel="prefetch" href="/assets/js/57.451b3b03.js"><link rel="prefetch" href="/assets/js/58.5a3170c9.js"><link rel="prefetch" href="/assets/js/59.07a17a4a.js"><link rel="prefetch" href="/assets/js/6.1ca2e879.js"><link rel="prefetch" href="/assets/js/60.1b0a9fc9.js"><link rel="prefetch" href="/assets/js/61.f7157247.js"><link rel="prefetch" href="/assets/js/62.c173c77c.js"><link rel="prefetch" href="/assets/js/63.d87ccb57.js"><link rel="prefetch" href="/assets/js/64.e2463e70.js"><link rel="prefetch" href="/assets/js/65.195cdd43.js"><link rel="prefetch" href="/assets/js/66.ed28e20b.js"><link rel="prefetch" href="/assets/js/67.f92c1448.js"><link rel="prefetch" href="/assets/js/68.32833385.js"><link rel="prefetch" href="/assets/js/69.760bcc2d.js"><link rel="prefetch" href="/assets/js/7.4f5ab419.js"><link rel="prefetch" href="/assets/js/70.f20006e6.js"><link rel="prefetch" href="/assets/js/71.5519ff55.js"><link rel="prefetch" href="/assets/js/72.a3a6e122.js"><link rel="prefetch" href="/assets/js/73.f2db40dd.js"><link rel="prefetch" href="/assets/js/74.f773afcb.js"><link rel="prefetch" href="/assets/js/75.5f51c21b.js"><link rel="prefetch" href="/assets/js/76.ef7aed33.js"><link rel="prefetch" href="/assets/js/78.bcf147aa.js"><link rel="prefetch" href="/assets/js/79.d37f9081.js"><link rel="prefetch" href="/assets/js/8.9260e225.js"><link rel="prefetch" href="/assets/js/80.c4dd8bbd.js"><link rel="prefetch" href="/assets/js/81.ed0c2c9c.js"><link rel="prefetch" href="/assets/js/82.05e5e894.js"><link rel="prefetch" href="/assets/js/83.eac1a2f1.js"><link rel="prefetch" href="/assets/js/84.450237ce.js"><link rel="prefetch" href="/assets/js/85.4768138e.js"><link rel="prefetch" href="/assets/js/86.014e227e.js"><link rel="prefetch" href="/assets/js/87.ad28f20f.js"><link rel="prefetch" href="/assets/js/88.50e743ed.js"><link rel="prefetch" href="/assets/js/89.60b147ea.js"><link rel="prefetch" href="/assets/js/9.f511b63e.js"><link rel="prefetch" href="/assets/js/90.1157c65c.js"><link rel="prefetch" href="/assets/js/91.30f4783a.js"><link rel="prefetch" href="/assets/js/92.77711535.js"><link rel="prefetch" href="/assets/js/93.88678a72.js"><link rel="prefetch" href="/assets/js/94.28488f43.js"><link rel="prefetch" href="/assets/js/95.afcd4d9d.js"><link rel="prefetch" href="/assets/js/96.a3c54a6c.js"><link rel="prefetch" href="/assets/js/97.c132c532.js"><link rel="prefetch" href="/assets/js/98.970f7e8f.js"><link rel="prefetch" href="/assets/js/99.fa93b1b6.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e8e4f3a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">wabicai的个人空间</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/前端/基础知识/1.静态语言和非静态语言.html" class="nav-link">
+  基础知识
+</a></li><li class="dropdown-item"><!----> <a href="/前端/HTML、CSS/1.垂直居中和水平居中方法总结.html" class="nav-link">
+  HTML、CSS
+</a></li><li class="dropdown-item"><!----> <a href="/前端/JavaScript/1.闭包相关.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/前端/浏览器相关/1.渲染进程中的渲染机制.html" class="nav-link">
+  浏览器相关
+</a></li><li class="dropdown-item"><!----> <a href="/前端/Vue/1.生命周期，钩子函数.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/前端/React/1.React Hook.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/前端/小程序/1.H5和小程序有什么区别.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/后端/Golang/1.javascript与Golang中类型的异同.html" class="nav-link">
+  Golang
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基石" class="dropdown-title"><span class="title">基石</span> <span class="arrow down"></span></button> <button type="button" aria-label="基石" class="mobile-dropdown-title"><span class="title">基石</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/基石/git、shell、npm、IDE相关操作/1.git.html" class="nav-link">
+  git、shell、npm、IDE相关操作
+</a></li><li class="dropdown-item"><!----> <a href="/基石/操作系统与数据库/1.进程和线程的区别.html" class="nav-link">
+  操作系统与数据库
+</a></li><li class="dropdown-item"><!----> <a href="/基石/计算机网络/1.OSI七层模型，各层协议.html" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/基石/设计模式/1.监听者模式和发布订阅模式(EventBus).html" class="nav-link">
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工作记录" class="dropdown-title"><span class="title">工作记录</span> <span class="arrow down"></span></button> <button type="button" aria-label="工作记录" class="mobile-dropdown-title"><span class="title">工作记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/SDK/2.Base模块/tevent.html" class="nav-link">
+  2.Base模块
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/SDK/3.Module模块/1.tlogger.html" class="nav-link">
+  3.Module模块
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/SDK/3.Module模块/business/business.html" class="nav-link">
+  Business
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/SDK/1.tlogger.html" class="nav-link">
+  SDK
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/SDK/3.Module模块/statistics/statistics.html" class="nav-link">
+  Statistics
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/多媒体实现/1.RTC方案.html" class="nav-link">
+  多媒体实现
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/小程序插件/如何实现插件与小程序的通信.html" class="nav-link">
+  小程序插件
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/项目难点.html" class="nav-link">
+  工作记录
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/远程调试/远程调试实现.html" class="nav-link">
+  远程调试
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/项目方案设计/1.electron xp适配.html" class="nav-link">
+  项目方案设计
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面经" class="dropdown-title"><span class="title">面经</span> <span class="arrow down"></span></button> <button type="button" aria-label="面经" class="mobile-dropdown-title"><span class="title">面经</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/面经/前端手写Api相关/1.Promise实现sleep.html" class="nav-link">
+  前端手写Api相关
+</a></li><li class="dropdown-item"><!----> <a href="/面经/场景题/1.大数据列表渲染的优化.html" class="nav-link">
+  场景题
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/前端/基础知识/1.静态语言和非静态语言.html" class="nav-link">
+  基础知识
+</a></li><li class="dropdown-item"><!----> <a href="/前端/HTML、CSS/1.垂直居中和水平居中方法总结.html" class="nav-link">
+  HTML、CSS
+</a></li><li class="dropdown-item"><!----> <a href="/前端/JavaScript/1.闭包相关.html" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/前端/浏览器相关/1.渲染进程中的渲染机制.html" class="nav-link">
+  浏览器相关
+</a></li><li class="dropdown-item"><!----> <a href="/前端/Vue/1.生命周期，钩子函数.html" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/前端/React/1.React Hook.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/前端/小程序/1.H5和小程序有什么区别.html" class="nav-link">
+  小程序
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/后端/Golang/1.javascript与Golang中类型的异同.html" class="nav-link">
+  Golang
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基石" class="dropdown-title"><span class="title">基石</span> <span class="arrow down"></span></button> <button type="button" aria-label="基石" class="mobile-dropdown-title"><span class="title">基石</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/基石/git、shell、npm、IDE相关操作/1.git.html" class="nav-link">
+  git、shell、npm、IDE相关操作
+</a></li><li class="dropdown-item"><!----> <a href="/基石/操作系统与数据库/1.进程和线程的区别.html" class="nav-link">
+  操作系统与数据库
+</a></li><li class="dropdown-item"><!----> <a href="/基石/计算机网络/1.OSI七层模型，各层协议.html" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/基石/设计模式/1.监听者模式和发布订阅模式(EventBus).html" class="nav-link">
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工作记录" class="dropdown-title"><span class="title">工作记录</span> <span class="arrow down"></span></button> <button type="button" aria-label="工作记录" class="mobile-dropdown-title"><span class="title">工作记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/SDK/2.Base模块/tevent.html" class="nav-link">
+  2.Base模块
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/SDK/3.Module模块/1.tlogger.html" class="nav-link">
+  3.Module模块
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/SDK/3.Module模块/business/business.html" class="nav-link">
+  Business
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/SDK/1.tlogger.html" class="nav-link">
+  SDK
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/SDK/3.Module模块/statistics/statistics.html" class="nav-link">
+  Statistics
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/TRTC/多媒体实现/1.RTC方案.html" class="nav-link">
+  多媒体实现
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/小程序插件/如何实现插件与小程序的通信.html" class="nav-link">
+  小程序插件
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/项目难点.html" class="nav-link">
+  工作记录
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/远程调试/远程调试实现.html" class="nav-link">
+  远程调试
+</a></li><li class="dropdown-item"><!----> <a href="/工作记录/项目方案设计/1.electron xp适配.html" class="nav-link">
+  项目方案设计
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面经" class="dropdown-title"><span class="title">面经</span> <span class="arrow down"></span></button> <button type="button" aria-label="面经" class="mobile-dropdown-title"><span class="title">面经</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/面经/前端手写Api相关/1.Promise实现sleep.html" class="nav-link">
+  前端手写Api相关
+</a></li><li class="dropdown-item"><!----> <a href="/面经/场景题/1.大数据列表渲染的优化.html" class="nav-link">
+  场景题
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/前端/Vue/1.MVC、MVVM.html" class="sidebar-link">/前端/Vue/1.MVC、MVVM.html</a></li><li><a href="/前端/Vue/1.生命周期，钩子函数.html" class="sidebar-link">/前端/Vue/1.生命周期，钩子函数.html</a></li><li><a href="/前端/Vue/11.Vue细节.html" class="sidebar-link">key 的使用</a></li><li><a href="/前端/Vue/12.路由传参、跳转.html" class="sidebar-link">/前端/Vue/12.路由传参、跳转.html</a></li><li><a href="/前端/Vue/13.Vue2 vs Vue3.html" class="active sidebar-link">关于 Vue3 的 setup</a></li><li><a href="/前端/Vue/2.VUe和React的区别是什么.html" class="sidebar-link">diff 算法不同</a></li><li><a href="/前端/Vue/2.虚拟DOM，Diff算法.html" class="sidebar-link">/前端/Vue/2.虚拟DOM，Diff算法.html</a></li><li><a href="/前端/Vue/3. 一些桌面端应用总结.html" class="sidebar-link">总结一些桌面端框架</a></li><li><a href="/前端/Vue/3.Vue组件通信的八种方式.html" class="sidebar-link">/前端/Vue/3.Vue组件通信的八种方式.html</a></li><li><a href="/前端/Vue/4.组件状态管理VueX.html" class="sidebar-link">/前端/Vue/4.组件状态管理VueX.html</a></li><li><a href="/前端/Vue/5.Api用法记录.html" class="sidebar-link">/前端/Vue/5.Api用法记录.html</a></li><li><a href="/前端/Vue/6.组件插槽.html" class="sidebar-link">匿名插槽</a></li><li><a href="/前端/Vue/7.响应式原理.html" class="sidebar-link">要点：</a></li><li><a href="/前端/Vue/8.Vue2中的缺陷.html" class="sidebar-link">/前端/Vue/8.Vue2中的缺陷.html</a></li><li><a href="/前端/Vue/9.路由懒加载、异步加载组件、动态组件.html" class="sidebar-link">异步加载组件</a></li><li><a href="/前端/Vue/原理篇:1.computed和watch.html" class="sidebar-link">computed</a></li><li><a href="/前端/Vue/原理篇:2.keep-alive.html" class="sidebar-link">keep-alive</a></li><li><a href="/前端/Vue/原理篇:3.nextTick.html" class="sidebar-link">用法示例</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="关于-vue3-的-setup"><a href="#关于-vue3-的-setup" class="header-anchor">#</a> 关于 Vue3 的 setup</h1> <ol><li>setup()函数接收两个参数：props、context(包含 attrs、slots、emit)。</li> <li>setup 函数是处于生命周期 beforeCreated 和 created 俩个钩子函数之前。</li> <li>执行 setup 时，组件实例尚未被创建（在 setup()内部，this 不会是该活跃实例得引用，即不指向 vue 实例，Vue 为了避免我们错误得使用，直接将 setup 函数中得 this 修改成了 undefined）。</li> <li>与模板一起使用时，需要返回一个对象。</li> <li>因为 setup 函数中，props 是响应式得，当传入新的 prop 时，它将会被更新，所以不能使用 es6 解构，因为它会消除 prop 得响应性，如需解构 prop，可以通过使用 setup 函数中得 toRefs 来完成此操作。</li> <li>在 setup()内使用响应式数据时，需要通过 .value 获取。</li> <li>从 setup() 中返回得对象上得 property 返回并可以在模板中被访问时，它将自动展开为内部值。不需要在模板中追加.value。</li> <li>setup 函数只能是同步的不能是异步的。</li></ol> <h1 id="差异"><a href="#差异" class="header-anchor">#</a> 差异</h1> <ol><li><p>双向绑定原理不同
+vue2：</p> <ul><li>vue2 的双向数据绑定是利用 ES5 的一个 APIObject.definePropert() 对数据进行劫持，结合发布订阅模式的方式来实现的。</li></ul> <p>vue3：</p> <ul><li>vue3 中使用了 ES6 的 Proxy API 对数据代理。相比 vue2.x，使用 proxy 的优势如下：
+<ul><li>defineProperty 只能监听某个属性，不能对全对象监听</li> <li>可以省去 for in，闭包等内容来提升效率(直接绑定整个对象即可)</li> <li>可以监听数组，不用再去单独的对数组做特异性操作 vue3.x 可以检测到数组内部数据的变化。</li></ul></li></ul></li> <li><p>是否支持碎片
+vue2：vue2 不支持碎片。
+vue3：vue3 支持碎片（Fragments），就是说可以拥有多个根节点。</p></li> <li><p>API 类型不同
+Vue2:选项型 API（Options API）
+Vue3:组合式 API（Composition API）</p></li> <li><p>定义数据变量和方法不同
+vue2：vue2 是把数据放入 data 中，在 vue2 中定义数据变量是 data(){}，创建的方法要在 methods:{}中。
+vue3：，vue3 就需要使用一个新的 setup()方法，此方法在组件初始化构造的时候触发。使用以下三个步骤来建立反应性数据： 1. 从 vue 引入 reactive； 2. 使用 reactive() 方法来声明数据为响应性数据； 3. 使用 setup()方法来返回我们的响应性数据，从而 template 可以获取这些响应性数据。</p></li> <li><p>生命周期钩子函数不同
+vue2：vue2 中的生命周期：</p></li></ol> <p>beforeCreate 组件创建之前
+created 组件创建之后
+beforeMount 组价挂载到页面之前执行
+mounted 组件挂载到页面之后执行
+beforeUpdate 组件更新之前
+updated 组件更新之后</p> <p>vue3：vue3 中的生命周期：</p> <p>setup 开始创建组件
+onBeforeMount 组价挂载到页面之前执行
+onMounted 组件挂载到页面之后执行
+onBeforeUpdate 组件更新之前
+onUpdated 组件更新之后
+而且 vue3.x 生命周期在调用前需要先进行引入。除了这些钩子函数外，vue3.x 还增加了 onRenderTracked 和 onRenderTriggered 函数。</p> <ol start="6"><li><p>父子传参不同
+vue2：父传子，用 props,子传父用事件 Emitting Events。在 vue2 中，会调用 this$emit 然后传入事件名和对象。
+vue3：父传子，用 props,子传父用事件 Emitting Events。在 vue3 中的 setup()中的第二个参数 content 对象中就有 emit，那么我们只要在 setup()接收第二个参数中使用分解对象法取出 emit 就可以在 setup 方法中随意使用了。</p></li> <li><p>指令与插槽不同
+vue2：vue2 中使用 slot 可以直接使用 slot；v-for 与 v-if 在 vue2 中优先级高的是 v-for 指令，而且不建议一起使用。
+vue3：vue3 中必须使用 v-slot 的形式；vue3 中 v-for 与 v-if,只会把当前 v-if 当做 v-for 中的一个判断语句，不会相互冲突；vue3 中移除 keyCode 作为 v-on 的修饰符，当然也不支持 config.keyCodes；vue3 中移除 v-on.native 修饰符；vue3 中移除过滤器 filter。</p></li> <li><p>main.js 文件不同
+vue2：vue2 中我们可以使用 pototype(原型)的形式去进行操作，引入的是构造函数。
+vue3：vue3 中需要使用结构的形式进行操作，引入的是工厂函数；vue3 中 app 组件中可以没有根标签。</p></li> <li><p>Dom diff 算法不同</p></li></ol> <p>Vue3:</p> <ul><li>对静态数据进行了标记，在 diff 算法时直接跳过,只会被创建一次，在渲染时直接复用。</li></ul> <ol start="10"><li>tree-shaking
+对不用的代码进行删除</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/前端/Vue/12.路由传参、跳转.html" class="prev">
+        /前端/Vue/12.路由传参、跳转.html
+      </a></span> <span class="next"><a href="/前端/Vue/2.VUe和React的区别是什么.html">
+        diff 算法不同
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.c79183c0.js" defer></script><script src="/assets/js/2.6c4cb704.js" defer></script><script src="/assets/js/77.011c1c0f.js" defer></script>
+  </body>
+</html>
