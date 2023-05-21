@@ -40,8 +40,8 @@ module.exports = [
         link: "/后端/Golang/1.javascript与Golang中类型的异同",
       },
       {
-        text: "nginx&&openresty",
-        link: "/后端/nginx&&openresty/index",
+        text: "nginx、openresty",
+        link: "/后端/nginx、openresty/index",
       },
       {
         text: "Liunx",
