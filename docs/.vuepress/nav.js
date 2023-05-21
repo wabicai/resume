@@ -4,7 +4,7 @@ module.exports = [
     items: [
       {
         text: "基础知识",
-        link: "/前端/基础知识/1.静态语音和非静态语音",
+        link: "/前端/基础知识/1.静态语言和非静态语言",
       },
       {
         text: "HTML、CSS",
