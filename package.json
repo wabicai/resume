@@ -9,7 +9,8 @@
   },
   "devDependencies": {
     "vuepress": "^1.9.9",
-    "vuepress-plugin-auto-sidebar": "^2.3.2"
+    "vuepress-plugin-auto-sidebar": "^2.3.2",
+    "vuepress-plugin-mermaidjs": "^1.9.1"
   },
   "scripts": {
     "dev": "vuepress dev docs --temp .temp",

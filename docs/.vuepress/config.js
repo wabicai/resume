@@ -57,6 +57,22 @@ module.exports = {
     requireModuleExtension: false,
   },
   plugins: [
+    "vuepress-plugin-mermaidjs",
+    "@vuepress/last-updated",
+    [
+      "@vuepress/search",
+      {
+        search: true, //默认false
+        searchMaxSuggestions: 10, // 默认是5
+      },
+    ],
+    [
+      "@vuepress/active-header-links",
+      {
+        sidebarLinkSelector: ".sidebar-link",
+        headerAnchorSelector: ".header-anchor",
+      },
+    ],
     [
       "vuepress-plugin-auto-sidebar",
       {

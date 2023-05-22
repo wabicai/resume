@@ -66,35 +66,11 @@ module.exports = [
     text: "工作记录",
     items: [
       {
-        text: "2.Base模块",
-        link: "/工作记录/TRTC/SDK/2.Base模块/tevent",
-      },
-      {
-        text: "3.Module模块",
-        link: "/工作记录/TRTC/SDK/3.Module模块/1.tlogger",
-      },
-      {
-        text: "Business",
-        link: "/工作记录/TRTC/SDK/3.Module模块/business/business",
-      },
-      {
-        text: "SDK",
-        link: "/工作记录/TRTC/SDK/1.tlogger",
-      },
-      {
-        text: "Statistics",
-        link: "/工作记录/TRTC/SDK/3.Module模块/statistics/statistics",
-      },
-      {
-        text: "多媒体实现",
-        link: "/工作记录/TRTC/多媒体实现/1.RTC方案",
-      },
-      {
         text: "小程序插件",
         link: "/工作记录/小程序插件/如何实现插件与小程序的通信",
       },
       {
-        text: "工作记录",
+        text: "项目难点",
         link: "/工作记录/项目难点",
       },
       {
