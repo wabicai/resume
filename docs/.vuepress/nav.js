@@ -30,6 +30,10 @@ module.exports = [
         text: "小程序",
         link: "/前端/小程序/1.H5和小程序有什么区别",
       },
+      {
+        text: "原理实现",
+        link: "/前端/原理实现/Vue:1.computed和watch",
+      },
     ],
   },
   {
@@ -94,6 +98,15 @@ module.exports = [
         text: "场景题",
         link: "/面经/场景题/1.大数据列表渲染的优化",
       },
+    ],
+  },
+    {
+    text: "杂记",
+    items: [
+      {
+        text: "1",
+        link: "/杂记/2023.4.07",
+      }
     ],
   },
 ];
