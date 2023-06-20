@@ -43,6 +43,10 @@ module.exports = [
         text: "Golang",
         link: "/后端/Golang/1.javascript与Golang中类型的异同",
       },
+      {
+        text: "Mysql",
+        link: "/后端/Mysql/1.基础命令",
+      },
     ],
   },
   {
@@ -70,12 +74,12 @@ module.exports = [
     text: "工作记录",
     items: [
       {
-        text: "小程序插件",
-        link: "/工作记录/小程序插件/如何实现插件与小程序的通信",
+        text: "女娲：代码配置化方案",
+        link: "/工作记录/nuwa/1.项目设计",
       },
       {
-        text: "项目难点",
-        link: "/工作记录/项目难点",
+        text: "小程序插件",
+        link: "/工作记录/小程序插件/如何实现插件与小程序的通信",
       },
       {
         text: "远程调试",
@@ -84,6 +88,10 @@ module.exports = [
       {
         text: "项目方案设计",
         link: "/工作记录/项目方案设计/1.electron xp适配",
+      },
+      {
+        text: "项目难点",
+        link: "/工作记录/项目难点",
       },
     ],
   },
