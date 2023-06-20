@@ -19,6 +19,10 @@ module.exports = [
         link: "/前端/浏览器相关/1.渲染进程中的渲染机制",
       },
       {
+        text: "前端工程化｜模块化",
+        link: "/前端/前端工程化/1.Webpack和vite原理",
+      },
+      {
         text: "Vue",
         link: "/前端/Vue/1.生命周期，钩子函数",
       },
