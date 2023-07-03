@@ -112,6 +112,15 @@ module.exports = [
       },
     ],
   },
+  {
+    text: "项目简历",
+    items: [
+      {
+        text: "wabicai",
+        link: "/简历",
+      },
+    ],
+  },
   // {
   //   text: "杂记",
   //   items: [
