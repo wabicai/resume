@@ -20,7 +20,7 @@ module.exports = [
       },
       {
         text: "前端工程化｜模块化",
-        link: "/前端/前端工程化/1.Webpack和vite原理",
+        link: "/前端/前端工程化/1.模块化AMD、CMD、ESMoudle",
       },
       {
         text: "Vue",
