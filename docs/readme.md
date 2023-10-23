@@ -3,7 +3,7 @@ home: true
 heroText: wabicai的计算机生涯杂记
 # tagline: 公众号：资料分享大师
 actionText: 开始学习 →
-actionLink: /JavaScript/1.闭包相关
+actionLink: /intro
 # features:
 # - title: 网盘资源
 #   details: 所有网盘资源均来自互联网，本网站不生产任何网盘资源，网盘资源是否失效需要自行判断。
