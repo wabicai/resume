@@ -57,8 +57,8 @@ module.exports = [
     text: "基石",
     items: [
       {
-        text: "git、shell、npm、IDE相关操作",
-        link: "/基石/git、shell、npm、IDE相关操作/1.git",
+        text: "git、shell、npm、Vim、IDE相关操作",
+        link: "/基石/git、shell、npm、Vim、IDE相关操作/1.git",
       },
       {
         text: "操作系统与数据库",
@@ -70,7 +70,7 @@ module.exports = [
       },
       {
         text: "设计模式",
-        link: "/基石/设计模式/1.监听者模式和发布订阅模式(EventBus)",
+        link: "/基石/设计模式/1.监听者模式和发布订阅模式",
       },
     ],
   },
@@ -78,16 +78,16 @@ module.exports = [
     text: "工作记录",
     items: [
       {
+        text: "H5前端",
+        link: "/工作记录/H5前端/优化-使用IndexDB解决Svga重复加载问题",
+      },
+      {
         text: "女娲：代码配置化方案",
         link: "/工作记录/低代码nuwa/1.项目设计",
       },
       {
         text: "小程序",
         link: "/工作记录/小程序/如何实现插件与小程序的通信",
-      },
-      {
-        text: "远程调试",
-        link: "/工作记录/远程调试/远程调试实现",
       },
       {
         text: "项目方案设计",
@@ -117,7 +117,7 @@ module.exports = [
     items: [
       {
         text: "wabicai",
-        link: "/简历",
+        link: "/resume",
       },
     ],
   },
