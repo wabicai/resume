@@ -97,3 +97,37 @@ export default {
   update: replaceUrl,
 };
 ```
+
+### v-clickThrottle 实现节流
+
+```js
+import Vue from "vue";
+/**
+ * @example v-clickThrottle='handler' delay-time='300'
+ */
+const clickThrottle = {
+  bind: function (el, binding) {
+    el.addEventListener(
+      "click",
+      async () => {
+        if (el._disableClick) return;
+        el._disableClick = true;
+        binding.value();
+        let delayTime = el.getAttribute("delay-time") || 500; //设置延时时间，默认500ms
+        setTimeout(() => {
+          el._disableClick = false;
+        }, delayTime);
+      },
+      true
+    );
+  },
+};
+/**
+ * @description 指定时间内只能点击一次
+ * @example v-clickThrottle="handleClick"
+ * @example 自定义时间间隔：delay-time='1000'  默认500ms
+ */
+export const useClickThrottle = () => {
+  Vue.directive("clickThrottle", clickThrottle);
+};
+```
