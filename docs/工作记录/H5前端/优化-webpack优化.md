@@ -1,3 +1,5 @@
+# 优化-webpack 优化
+
 1. splitChunks： dll（通用包）、
 2. 使用 webp，webp-loader
 3. file-loader、url-loader，小图片使用 base64 减少 http 请求

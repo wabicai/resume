@@ -1,4 +1,4 @@
-# 使用 vue.directive 指令实现功能简化
+# 开发-使用 vue.directive 指令实现功能简化
 
 ## 背景
 
