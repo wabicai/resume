@@ -183,4 +183,4 @@ export default _dbInstance;
 ```
 
 五、效果
-![Alt text](./img/svga/image.png)
+![Alt text](./img/svga.png)
