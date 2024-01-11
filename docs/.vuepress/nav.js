@@ -82,6 +82,10 @@ module.exports = [
         link: "/工作记录/H5前端/优化-使用IndexDB解决Svga重复加载问题",
       },
       {
+        text: '后端',
+        link: '/工作记录/后端/基建-node服务治理'
+      }
+      {
         text: "女娲：代码配置化方案",
         link: "/工作记录/低代码nuwa/1.项目设计",
       },
