@@ -36,7 +36,7 @@ module.exports = [
       },
       {
         text: "原理实现",
-        link: "/前端/原理实现/Vue:1.computed和watch",
+        link: "/前端/原理实现/Vue-computed和watch",
       },
       {
         text: "场景题",
