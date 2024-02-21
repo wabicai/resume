@@ -1,0 +1,1 @@
+# 应用-使用puppeteer截图SSR生成的HTML页
