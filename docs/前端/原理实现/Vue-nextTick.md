@@ -1,4 +1,4 @@
-# 原理篇:3.nextTick
+# Vue-nextTick
 
 ## 用法示例
 

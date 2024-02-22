@@ -1,4 +1,4 @@
-# 原理篇:1.computed 和 watch
+# 原理篇 1:computed 和 watch
 
 ## computed
 
