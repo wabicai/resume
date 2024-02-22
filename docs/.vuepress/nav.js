@@ -36,7 +36,15 @@ module.exports = [
       },
       {
         text: "原理实现",
-        link: "/前端/原理实现/Vue:1.computed和watch",
+        link: "/前端/原理实现/Vue-computed和watch",
+      },
+      {
+        text: "场景题",
+        link: "/前端/场景题/1.大数据列表渲染的优化",
+      },
+      {
+        text: "前端手写Api相关",
+        link: "/前端/前端手写Api相关/1.Promise实现sleep",
       },
     ],
   },
@@ -70,7 +78,7 @@ module.exports = [
       },
       {
         text: "设计模式",
-        link: "/基石/设计模式/1.监听者模式和发布订阅模式",
+        link: "/基石/设计模式/1.监听者模式和发布订阅模式(EventBus)",
       },
     ],
   },
@@ -84,10 +92,6 @@ module.exports = [
       {
         text: '后端',
         link: '/工作记录/后端/基建-node服务治理'
-      }
-      {
-        text: "女娲：代码配置化方案",
-        link: "/工作记录/低代码nuwa/1.项目设计",
       },
       {
         text: "小程序",
@@ -100,19 +104,6 @@ module.exports = [
       {
         text: "项目难点",
         link: "/工作记录/项目难点",
-      },
-    ],
-  },
-  {
-    text: "面经",
-    items: [
-      {
-        text: "前端手写Api相关",
-        link: "/面经/前端手写Api相关/1.Promise实现sleep",
-      },
-      {
-        text: "场景题",
-        link: "/面经/场景题/1.大数据列表渲染的优化",
       },
     ],
   },
