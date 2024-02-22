@@ -43,8 +43,8 @@ module.exports = [
         link: "/前端/场景题/1.大数据列表渲染的优化",
       },
       {
-        text: "前端手写Api相关",
-        link: "/前端/前端手写Api相关/1.Promise实现sleep",
+        text: "前端Api实现、算法相关",
+        link: "/前端/前端Api实现、算法相关/1.Promise实现sleep",
       },
     ],
   },
@@ -65,8 +65,8 @@ module.exports = [
     text: "基石",
     items: [
       {
-        text: "git、shell、npm、Vim、IDE相关操作",
-        link: "/基石/git、shell、npm、Vim、IDE相关操作/1.git",
+        text: "git、Linux、Vim相关操作",
+        link: "/基石/git、Linux、Vim相关操作/1.git",
       },
       {
         text: "操作系统与数据库",
@@ -78,7 +78,7 @@ module.exports = [
       },
       {
         text: "设计模式",
-        link: "/基石/设计模式/1.监听者模式和发布订阅模式(EventBus)",
+        link: "/基石/设计模式/1.工厂模式",
       },
     ],
   },

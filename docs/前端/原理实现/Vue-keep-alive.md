@@ -41,21 +41,17 @@
 **方案一**：整个页面缓存
 
 ```js
-< keep - alive >
-    <
-    router - view v -
-    if = "$route.meta.keepAlive" / >
-    <
-    /keep-alive> <
-router - view v -
-    if = "!$route.meta.keepAlive" / >
+<keep-alive>
+    <router-view v-if = "$route.meta.keepAlive"/>
+</keep-alive>
+<router-view v-if = "!$route.meta.keepAlive"/>
 ```
 
 **方案二**：动态组件缓存
 
 ```js
-< keep - alive: include = "$store.state.keepAlive.cachedView" >
-    <
-    cacheView > < /cacheView> <
-    /keep-alive>
+<keep-alive: include = "$store.state.keepAlive.cachedView" >
+    <cacheView>
+    </cacheView>
+</keep-alive>
 ```
