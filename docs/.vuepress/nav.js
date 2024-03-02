@@ -20,7 +20,7 @@ module.exports = [
       },
       {
         text: "前端工程化｜模块化",
-        link: "/前端/前端工程化/1.模块化AMD、CMD、ESMoudle",
+        link: "/前端/前端工程化/1.Wepbpack:基本概念",
       },
       {
         text: "Vue",
@@ -78,7 +78,7 @@ module.exports = [
       },
       {
         text: "设计模式",
-        link: "/基石/设计模式/1.工厂模式",
+        link: "/基石/设计模式/创建型-工厂模式",
       },
     ],
   },
