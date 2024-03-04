@@ -1,1 +1,1 @@
-# 原理篇 5:Vue-Vue.mixin
+# Vue-Vue.mixin

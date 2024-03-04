@@ -1,4 +1,4 @@
-# Vue-nextTick
+# Vue:nextTick
 
 ## 用法示例
 
@@ -24,7 +24,7 @@
 ### 功能实现
 
 - 宏任务(macro task) 有 setTimeout、MessageChannel、postMessage、setImmediate；
-- 微任务(micro task）有 MutationObsever 和 Promise.then。
+- 微任务(micro task)有 MutationObserver 和 Promise.then。
 
 #### 能力检测（针对异步队列的实现）
 
