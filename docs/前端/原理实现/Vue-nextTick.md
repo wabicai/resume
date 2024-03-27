@@ -11,12 +11,18 @@
     el: "##example",
     data: {
       message: "123",
+      rewardBoxWidth:0,
+      rewardItemWidth:0
     },
   });
   vm.message = "new message"; // 更改数据
   console.log(vm.$el.innerHTML); // '123'
   Vue.nextTick(function () {
-    console.log(vm.$el.innerHTML); // 'new message'
+    // 在数据更新、页面渲染完成之后。计算得出盒子的宽高。然后执行onScroll，滑动到响应的地方的操作
+    rewardBoxWidth = this.$refs['rewardbox']?.getBoundingClientRect()?.width;
+    rewardItemWidth = Array.isArray(this.$refs[`lv1`]) ? this.$refs[`lv1`][0]?.getBoundingClientRect()?.width : 0;
+    this.onScroll();
+    this.getScrollElem(this.fullRewardList);
   });
 </script>
 ```
