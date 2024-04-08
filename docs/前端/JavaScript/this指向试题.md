@@ -222,3 +222,41 @@ button.addEventListener("click", function () {
   this.innerHTML = "Clicked button";
 });
 ```
+
+
+9.
+```js
+function Foo(){
+  Foo.getValue= function(){
+    console.log(1);
+  }
+  this.getValue= function(){
+    console.log(2);
+  }
+}
+
+Foo.prototype.getValue = function(){
+  console.log(3);
+}
+Foo.getValue = function(){
+  console.log(4);
+}
+
+
+Foo.getValue(); //4
+
+let obj = new Foo();
+obj.getValue(); //2
+Foo.getValue(); //1
+
+
+function Foo2(){}
+
+Foo2.getValue = function(){
+  console.log(5);
+}
+Foo2.prototype = new Foo();
+
+const obj2 = new Foo2();
+obj2.getValue(); //2
+```

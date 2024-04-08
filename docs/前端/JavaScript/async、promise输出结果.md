@@ -122,3 +122,49 @@ Promise.resolve()
 // 5
 // 6
 ```
+
+```js
+function promise1() {
+  console.log("pormise1");
+  try {
+    promise2().catch((err) => {
+      console.log(`err1： ${err}`);
+      // throw new Error(err);
+      throw err
+    }).catch(()=>{
+    console.log(`err3:${err}`);
+    })
+  } catch (err) {
+    console.log(`err2:${err}`);
+  }
+}
+function promise2() {
+  console.log("pormise2");
+  return new Promise((_, reject) => {
+    reject(`promise3 error`);
+  });
+}
+console.log("script start");
+setTimeout(() => {
+  console.log("setTimeout");
+}, 0);
+promise1();
+new Promise((resolve) => {
+  console.log("promise4");
+  resolve();
+}).then(() => {
+  console.log("promise5");
+});
+console.log("script end");
+
+
+// console.log("script start");
+//   console.log("pormise1");
+//   console.log("pormise2");
+//   console.log("promise4");
+// console.log("script end");
+
+//     console.log(`err1： promise3 error`);
+//     console.log(`err2: promise3 error`);
+//   console.log("promise5");
+```
