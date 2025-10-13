@@ -3,6 +3,7 @@ const nav = require("./nav.js");
 module.exports = {
   title: "wabicai的个人空间",
   description: "前端、后端、互联网前沿学习等等",
+  theme: "reco",
   markdown: {
     lineNumbers: true,
     extendMarkdown: (md) => {
@@ -105,6 +106,36 @@ module.exports = {
     ],
   ],
   themeConfig: {
+    type: "blog",
     nav,
+    // 博客配置
+    blogConfig: {
+      category: {
+        location: 2,
+        text: "分类",
+      },
+    },
+    // 友情链接
+    friendLink: [
+      {
+        title: "GitHub",
+        desc: "查看源码",
+        link: "https://github.com/wabicai/resume",
+      },
+    ],
+    // 备案信息
+    record: "MIT Licensed",
+    recordLink: "",
+    // 项目开始时间
+    startYear: "2024",
+    // 作者信息
+    author: "wabicai",
+    authorAvatar: "",
+    // 搜索设置
+    search: true,
+    searchMaxSuggestions: 10,
+    // 自动形成侧边导航
+    subSidebar: "auto",
+    sidebarDepth: 2,
   },
 };

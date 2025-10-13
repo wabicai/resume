@@ -1,0 +1,132 @@
+// 自定义首页样式
+.home
+  // 增强 hero 区域
+  .hero
+    padding 3rem 1.5rem
+    background linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+    color #fff
+
+    img
+      max-width 200px
+      border-radius 50%
+      box-shadow 0 8px 32px rgba(0, 0, 0, 0.1)
+      transition transform 0.3s ease
+
+      &:hover
+        transform scale(1.05)
+
+    h1
+      font-size 3rem
+      color #fff !important
+      text-shadow 2px 2px 4px rgba(0, 0, 0, 0.2)
+
+    .description
+      color rgba(255, 255, 255, 0.9) !important
+      font-size 1.4rem
+      margin 1.8rem auto
+
+    .action-button
+      background-color rgba(255, 255, 255, 0.9)
+      color #667eea
+      border none
+      font-weight bold
+      transition all 0.3s ease
+      box-shadow 0 4px 12px rgba(0, 0, 0, 0.15)
+
+      &:hover
+        background-color #fff
+        transform translateY(-2px)
+        box-shadow 0 6px 20px rgba(0, 0, 0, 0.2)
+
+  // 美化 features 区域
+  .features
+    padding 2.5rem 1.5rem
+    max-width 1200px
+
+    .feature
+      flex-basis calc(33.33% - 2rem)
+      padding 1.5rem
+      border-radius 12px
+      background #fff
+      box-shadow 0 2px 12px rgba(0, 0, 0, 0.08)
+      transition all 0.3s ease
+      border 1px solid #eaecef
+
+      &:hover
+        transform translateY(-5px)
+        box-shadow 0 8px 24px rgba(0, 0, 0, 0.12)
+        border-color #667eea
+
+      h2
+        color #667eea
+        font-size 1.3rem
+        border-bottom none
+        padding-bottom 0
+
+      p
+        color #4e6e8e
+        line-height 1.7
+
+  // 美化内容区域
+  .theme-default-content
+    max-width 960px
+
+    h2
+      border-bottom 2px solid #667eea
+      padding-bottom 0.5rem
+
+    a
+      color #667eea
+      font-weight 500
+      transition color 0.3s ease
+
+      &:hover
+        color #764ba2
+        text-decoration underline
+
+    blockquote
+      border-left 4px solid #667eea
+      background-color #f3f5f7
+      padding 1rem 1.5rem
+      border-radius 4px
+
+      p
+        margin 0
+        color #4e6e8e
+
+  // 美化 footer
+  .footer
+    padding 2rem
+    border-top 1px solid #eaecef
+    color #4e6e8e
+    background-color #f8f9fa
+
+// 响应式优化
+@media (max-width: 719px)
+  .home
+    .hero
+      h1
+        font-size 2rem
+
+      .description
+        font-size 1.2rem
+
+    .features
+      .feature
+        flex-basis 100%
+        margin-bottom 1rem
+
+// 滚动条美化
+::-webkit-scrollbar
+  width 8px
+  height 8px
+
+::-webkit-scrollbar-track
+  background #f1f1f1
+
+::-webkit-scrollbar-thumb
+  background #667eea
+  border-radius 4px
+
+  &:hover
+    background #764ba2
