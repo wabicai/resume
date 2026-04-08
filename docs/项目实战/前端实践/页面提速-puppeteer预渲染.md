@@ -1,4 +1,4 @@
-# 页面提速-puppeteer预渲染
+# 页面提速：Puppeteer 预渲染
 
 ## 背景
 

@@ -1,4 +1,4 @@
-# 优化-webpack 优化
+# 优化：Webpack 优化
 
 1. splitChunks： dll（通用包）、
 2. 使用 webp，webp-loader

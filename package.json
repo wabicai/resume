@@ -9,13 +9,14 @@
     "vuepress-theme-reco": "1.6.17"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "vuepress": "^1.9.9",
     "vuepress-plugin-auto-sidebar": "^2.3.2",
     "vuepress-plugin-mermaidjs": "^1.9.1"
   },
   "scripts": {
-    "dev": "vuepress dev docs --temp .temp",
-    "build": "vuepress build docs",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress dev docs --temp .temp",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
     "doc": "vuepress nav docs -f"
   },
   "repository": {
@@ -29,5 +30,5 @@
     "url": "https://github.com/wabicai/resume/issues"
   },
   "homepage": "https://github.com/wabicai/resume#readme",
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "npm@10.9.4"
 }

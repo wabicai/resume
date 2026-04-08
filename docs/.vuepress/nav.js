@@ -51,15 +51,15 @@ module.exports = [
     items: [
       {
         text: "前端实践",
-        link: "/项目实战/前端实践/优化-使用IndexDB解决Svga重复加载问题",
+        link: "/项目实战/前端实践/",
       },
       {
         text: "后端实践",
-        link: "/项目实战/后端实践/基建-node服务治理",
+        link: "/项目实战/后端实践/",
       },
       {
         text: "项目经验",
-        link: "/项目实战/项目经验/1.electronxp适配",
+        link: "/项目实战/项目经验/",
       },
     ],
   },

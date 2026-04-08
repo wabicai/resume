@@ -1,4 +1,4 @@
-# 优化-使用IndexDB解决Svga重复加载问题
+# 优化：使用 IndexedDB 解决 SVGA 重复加载问题
 
 ## 背景
 
