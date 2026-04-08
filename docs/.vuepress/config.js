@@ -108,13 +108,6 @@ module.exports = {
   themeConfig: {
     type: "blog",
     nav,
-    // 博客配置
-    blogConfig: {
-      category: {
-        location: 2,
-        text: "分类",
-      },
-    },
     // 友情链接
     friendLink: [
       {
