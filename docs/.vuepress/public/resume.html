@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="蔡凯升的 AI 方向简历：MCP 硬件自动化、研发 Agent、CLI 工具接入与全栈工程。" />
+    <meta name="color-scheme" content="light" />
+    <title>蔡凯升 · AI 版简历</title>
+    <link rel="icon" href="data:," />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #222b35;
+        --body: #3f4854;
+        --muted: #616e7b;
+        --blue: #245976;
+        --line: #d9e2e9;
+        --canvas: #edf1f4;
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 14px;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--canvas); color: var(--body); line-height: 1.8; }
+      h1, h2, h3, p { margin: 0; }
+      h1, h2, h3 { color: var(--ink); text-wrap: balance; }
+      a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      a:hover { color: var(--blue); }
+      a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+      ::selection { color: #173f57; background: #dcebf4; }
+      button { font: inherit; }
+      .toolbar {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 22px 0 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .toolbar-title { display: flex; align-items: center; gap: 12px; }
+      .toolbar-title strong { color: var(--ink); font-weight: 600; }
+      .print-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 40px;
+        padding: 8px 15px;
+        border: 1px solid #bacbd8;
+        border-radius: 5px;
+        color: var(--blue);
+        background: transparent;
+        cursor: pointer;
+        transition: background-color 140ms ease-out;
+      }
+      .print-button:hover { background: #dfe9f0; }
+      .print-button svg { width: 16px; height: 16px; }
+      .resume { max-width: 1000px; margin: 0 auto 40px; }
+      .page {
+        display: flex;
+        flex-direction: column;
+        min-height: 1360px;
+        padding: 45px 55px 25px;
+        background: #fff;
+        box-shadow: 0 10px 32px rgb(31 50 70 / 5%);
+      }
+      .page + .page { margin-top: 28px; }
+      .identity {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        padding-bottom: 22px;
+        border-bottom: 2px solid var(--blue);
+      }
+      h1 { font-size: 36px; line-height: 1.35; font-weight: 650; letter-spacing: .04em; }
+      .role { margin-top: 8px; color: var(--blue); font-size: 18px; font-weight: 600; }
+      .contact { display: flex; flex-wrap: wrap; gap: 3px 17px; margin-top: 13px; color: var(--muted); font-size: 11px; }
+      .portrait {
+        flex: 0 0 92px;
+        width: 92px;
+        height: 120px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+        color: var(--muted);
+        background: #f3f6f8;
+        border: 1px solid var(--line);
+        overflow: hidden;
+        font-size: 10px;
+      }
+      .portrait svg { width: 32px; height: 32px; color: #7d91a0; }
+      .portrait img { width: 100%; height: 100%; object-fit: cover; }
+      .section { margin-top: 23px; }
+      h2 { padding-bottom: 7px; margin-bottom: 11px; border-bottom: 1px solid var(--line); color: var(--blue); font-size: 19px; font-weight: 600; line-height: 1.5; }
+      .summary { font-size: 14px; line-height: 1.9; }
+      strong { color: var(--ink); font-weight: 600; }
+      .skills { margin: 0; font-size: 13px; line-height: 1.85; }
+      .skills > div { display: grid; grid-template-columns: 103px minmax(0, 1fr); gap: 10px; }
+      .skills > div + div { margin-top: 5px; }
+      .skills dt { color: var(--blue); font-weight: 600; }
+      .skills dd { margin: 0; }
+      .work-heading, .project-heading, .education-row { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; }
+      .work-heading h3 { font-size: 16px; }
+      .work-heading h3 span { margin-left: 12px; color: var(--blue); font-size: 12px; font-weight: 500; }
+      .pending { color: var(--muted); font-size: 10px; }
+      .work-summary { margin-top: 5px; font-size: 13px; }
+      .project + .project { margin-top: 24px; }
+      .project h3 { font-size: 16px; line-height: 1.65; font-weight: 600; }
+      .project-kind { flex-shrink: 0; color: var(--blue); font-size: 11px; }
+      .stack { margin-top: 3px; color: var(--muted); font-size: 11px; line-height: 1.7; }
+      .project-brief { margin-top: 8px; font-size: 14px; line-height: 1.85; }
+      .project ul { margin: 8px 0 0; padding-left: 16px; font-size: 14px; line-height: 1.85; }
+      .project li + li { margin-top: 5px; }
+      .project li::marker { color: var(--blue); font-size: .8em; }
+      .continuation {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--blue);
+      }
+      .continuation strong { font-size: 18px; }
+      .continuation span { color: var(--muted); font-size: 11px; }
+      .earlier { margin: 0; padding-left: 16px; font-size: 13px; line-height: 1.85; }
+      .earlier li + li { margin-top: 7px; }
+      .earlier li::marker { color: var(--blue); }
+      .education-row { font-size: 12px; }
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        padding-top: 12px;
+        margin-top: auto;
+        color: var(--muted);
+        font-size: 10px;
+      }
+      .footer-space { height: 24px; flex: 0 0 24px; }
+      .footer a { text-decoration: none; }
+      @media screen and (max-width: 1060px) {
+        .toolbar { margin: 0 22px; }
+        .resume { margin: 0 22px 30px; }
+        .page { padding: 36px; min-height: 0; }
+      }
+      @media screen and (max-width: 620px) {
+        .toolbar { margin: 0; padding: 14px 18px; }
+        .toolbar-title > span { display: none; }
+        .resume { margin: 0; }
+        .page { padding: 26px 21px 20px; box-shadow: none; }
+        .page + .page { margin-top: 14px; }
+        .identity { gap: 16px; align-items: flex-start; padding-bottom: 20px; }
+        h1 { font-size: 30px; }
+        .role { font-size: 15px; margin-top: 8px; }
+        .contact { margin-top: 10px; font-size: 10px; gap: 2px 10px; }
+        .portrait { flex-basis: 70px; width: 70px; height: 94px; }
+        .portrait svg { width: 26px; height: 26px; }
+        .section { margin-top: 22px; }
+        h2 { font-size: 16px; }
+        .skills > div { grid-template-columns: 1fr; gap: 0; }
+        .skills > div + div { margin-top: 9px; }
+        .work-heading, .project-heading, .education-row { flex-wrap: wrap; gap: 3px 10px; }
+        .work-heading h3 span { display: block; margin: 3px 0 0; }
+        .project-brief, .project ul, .earlier { font-size: 13px; }
+        .project h3 { font-size: 15px; }
+        .project + .project { margin-top: 24px; }
+        .continuation strong { font-size: 17px; }
+        .continuation span { max-width: 170px; text-align: right; font-size: 10px; }
+        .stack { font-size: 10px; }
+        .footer { font-size: 9px; }
+      }
+      @media (prefers-reduced-motion: reduce) { .print-button { transition: none; } }
+      @page { size: A4; margin: 11mm 12mm; }
+      @media print {
+        body { background: #fff; }
+        .toolbar { display: none; }
+        .resume { max-width: none; margin: 0; }
+        .page { min-height: 275mm; padding: 0; box-shadow: none; break-after: page; }
+        .page + .page { margin-top: 0; }
+        .page:last-child { break-after: auto; }
+        .identity { gap: 7mm; padding-bottom: 4mm; }
+        h1 { font-size: 26pt; }
+        .role { margin-top: 2mm; font-size: 12pt; }
+        .contact { margin-top: 2.5mm; gap: .5mm 4mm; font-size: 7.5pt; }
+        .portrait { flex-basis: 22mm; width: 22mm; height: 29mm; font-size: 7pt; }
+        .portrait svg { width: 8mm; height: 8mm; }
+        .section { margin-top: 4.2mm; }
+        h2 { padding-bottom: 1.5mm; margin-bottom: 2.3mm; font-size: 11pt; }
+        .summary { font-size: 10pt; line-height: 1.7; }
+        .skills { font-size: 9pt; line-height: 1.7; }
+        .skills > div { grid-template-columns: 24mm minmax(0, 1fr); gap: 2mm; }
+        .skills > div + div { margin-top: .8mm; }
+        .work-heading h3 { font-size: 10pt; }
+        .work-heading h3 span { margin-left: 3mm; font-size: 8.5pt; }
+        .pending { font-size: 7.5pt; }
+        .work-summary { margin-top: 1mm; font-size: 8.5pt; line-height: 1.7; }
+        .project + .project { margin-top: 4.5mm; }
+        .project h3 { font-size: 10pt; line-height: 1.55; }
+        .project-kind { font-size: 7.5pt; }
+        .stack { margin-top: .7mm; font-size: 7.5pt; line-height: 1.6; }
+        .project-brief { margin-top: 1.5mm; font-size: 10pt; line-height: 1.7; }
+        .project ul { margin-top: 1.5mm; padding-left: 4mm; font-size: 10pt; line-height: 1.7; }
+        .project li + li { margin-top: 1mm; }
+        .continuation { padding-bottom: 2.5mm; }
+        .continuation strong { font-size: 12pt; }
+        .continuation span { font-size: 8pt; }
+        .earlier { padding-left: 4mm; font-size: 8.5pt; line-height: 1.7; }
+        .earlier li + li { margin-top: 1mm; }
+        .education-row { font-size: 8.5pt; }
+        .footer { padding-top: 2mm; font-size: 7pt; }
+        .footer-space { height: 3mm; flex-basis: 3mm; }
+        .project, .education-row, .identity, .skills { break-inside: avoid; }
+        h2, h3, .project-heading, .stack { break-after: avoid; }
+        p, li { orphans: 2; widows: 2; }
+        a { text-decoration: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar" aria-label="简历预览工具">
+      <div class="toolbar-title"><strong>蔡凯升 · AI 版</strong><span>两页 A4</span><a href="./resume-business.html">业务研发版 →</a></div>
+      <button class="print-button" type="button" onclick="window.print()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3"/><path d="M7 14h10v7H7zM17 11h.01"/></svg>
+        打印 / 存为 PDF
+      </button>
+    </div>
+    <main class="resume" aria-label="蔡凯升的AI 版简历">
+      <section class="page" aria-label="简历第 1 页">
+        <header class="identity">
+          <div>
+            <h1>蔡凯升</h1>
+            <p class="role">AI 应用开发工程师｜Agent 工具与自动化</p>
+            <!-- 待补充：使用个人求职联系方式，不从 Git 作者邮箱推断。 -->
+            <div class="contact"><span>邮箱：待补充</span><span>电话：待补充</span><span>城市：待补充</span><a href="https://github.com/wabicai" target="_blank" rel="noopener noreferrer">GitHub / wabicai</a></div>
+          </div>
+          <!-- 头像：将 figure 内的 SVG 和 figcaption 替换成 <img src="./avatar.jpg" alt="蔡凯升的头像" />，再放入自己的照片。 -->
+          <figure class="portrait" aria-label="头像预留位置">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="20" cy="13" r="6"/><path d="M8 34v-3a12 12 0 0 1 24 0v3"/></svg>
+            <figcaption>头像预留</figcaption>
+          </figure>
+        </header>
+        <section class="section" aria-labelledby="profile-heading">
+          <h2 id="profile-heading">个人简介</h2>
+          <p class="summary">具备<strong>AI 工具接入、真实设备自动化与全栈开发</strong>经验。在 OneKey 参与研发智能助手和硬件自动化平台，开发 MCP 工具、动作执行逻辑与面向 AI 的 CLI。关注<strong>任务上下文、执行状态和异常恢复</strong>，能够将模型能力接入实际研发流程，并承担界面开发、服务联调与运行维护。</p>
+        </section>
+        <section class="section" aria-labelledby="skills-heading">
+          <h2 id="skills-heading">核心能力</h2>
+          <dl class="skills">
+            <div><dt>Agent 工具</dt><dd>MCP 接入 · CLI 非交互调用 · OpenClaw / Skills · 任务上下文 · 结构化输出</dd></div>
+            <div><dt>执行与反馈</dt><dd>动作序列 · 设备会话 · OCR / PaddleOCR · 异常重试 · 人工控制与任务恢复</dd></div>
+            <div><dt>全栈开发</dt><dd>TypeScript / Node.js · Python / FastAPI · React / Electron · PostgreSQL · Docker</dd></div>
+            <div><dt>工程基础</dt><dd>Hardware SDK · WebUSB / BLE · GitHub / CI · Slack 集成 · 自动化回归</dd></div>
+          </dl>
+        </section>
+        <section class="section" aria-labelledby="work-heading">
+          <h2 id="work-heading">工作经历</h2>
+          <div class="work-heading"><h3>OneKey<span>SDK / 跨端研发 · AI 自动化实践</span></h3><span class="pending">任职起止时间待补充</span></div>
+          <p class="work-summary">基于硬件钱包 SDK 与跨端研发经验，推进 QA 设备自动化、团队回归助手和 AI 调用工具建设，协同开发与 QA 完成流程联调、问题排查及持续迭代。</p>
+        </section>
+        <section class="section" aria-labelledby="projects-heading">
+          <h2 id="projects-heading">代表项目</h2>
+          <!-- qa-auto-hardware #5；hardware-js-sdk #694；Slack C024ABCF8LF/p1772676998409419。团队平台，个人负责上述模块。 -->
+          <article class="project">
+            <div class="project-heading"><h3>MCP 硬件自动化平台</h3><span class="project-kind">Agent 工具 / 视觉反馈</span></div>
+            <p class="stack">TypeScript · Electron / React · MCP · Python / PaddleOCR · 机械臂 / 摄像头</p>
+            <p class="project-brief">参与硬件钱包自动化平台开发，将<strong>设备控制、屏幕识别与测试动作</strong>封装为 AI 客户端可调用的工具，承担动作预设、运行逻辑、OCR 和控制面板开发。</p>
+            <ul>
+              <li><strong>工具接口：</strong>扩展 MCP 自动化预设与确认操作，将设备动作转化为可组合的工具调用，为 AI 客户端提供连接真实硬件的执行入口。</li>
+              <li><strong>执行编排：</strong>统一动作解析、序列展开与运行入口，使手动控制和自动化流程复用执行逻辑，处理动作先后关系、停止操作与错误反馈。</li>
+              <li><strong>视觉反馈：</strong>结合摄像头与 PaddleOCR 获取设备屏幕内容，完善截图处理、题号与候选项识别、结果校验，支撑依赖屏幕状态的后续操作。</li>
+              <li><strong>场景落地：</strong>完成三种助记词钱包的创建模块，推进创建与验证流程联调；将重复操作沉淀为动作预设，方便 QA 复用测试步骤。</li>
+              <li><strong>操作体验：</strong>开发和完善 React 控制面板，同步设备状态、动作执行和识别结果，提供人工控制与异常排查入口，便于定位工具调用和物理执行之间的问题。</li>
+            </ul>
+          </article>
+
+        </section>
+        <div class="footer-space" aria-hidden="true"></div>
+        <footer class="footer"><span>蔡凯升 · AI 版</span><span>1 / 2</span></footer>
+      </section>
+      <section class="page" aria-label="简历第 2 页">
+        <header class="continuation"><strong>蔡凯升</strong><span>AI 应用开发工程师｜Agent 工具与自动化 · 项目经历续</span></header>
+        <section class="section" aria-labelledby="more-projects-heading">
+          <h2 id="more-projects-heading">代表项目（续）</h2>
+          <!-- 用户确认参与团队机器人建设；HiveBot 能力为项目背景。个人记录：Slack C026693UM62/p1779266002275459、p1775567181643739、p1784530431053079。 -->
+          <article class="project">
+            <div class="project-heading"><h3>研发效能 Agent · HiveBot / Kitty</h3><span class="project-kind">AI 工作流 / 团队协作</span></div>
+            <p class="stack">OpenClaw · Agent Skills · Slack · GitHub / CI · PR 分析 · 结构化输出</p>
+            <p class="project-brief">参与团队研发机器人建设，项目覆盖<strong>PR 评审状态、构建信息、日志分析与 QA 回归项生成</strong>；个人重点负责 Kitty 回归 Skill 迭代与运行维护。</p>
+            <ul>
+              <li><strong>任务上下文：</strong>维护基于 PR 的回归分析 Skill，将改动范围、跨端影响与异常场景组织为测试项，支持从 Slack 线程发起任务并接收结果。</li>
+              <li><strong>结果交付：</strong>完善结构化回归项和表格输出，适配 Slack 展示，便于 QA 查看测试步骤与预期结果；工具已被多位 QA 同事用于日常提测。</li>
+              <li><strong>运行可靠性：</strong>补充网络异常重试，排查长任务停滞、服务断连与内存耗尽，恢复任务处理；结合团队反馈调整 Skill 输出和机器人配置。</li>
+            </ul>
+          </article>
+
+          <!-- app-monorepo #11135；Slack C022268A5EW/p1776926791545469、p1776927063078539、p1777222133971659。 -->
+          <article class="project">
+            <div class="project-heading"><h3>面向 Agent 的硬件钱包 CLI</h3><span class="project-kind">工具基础设施 / 会话管理</span></div>
+            <p class="stack">TypeScript · Node.js · Hardware SDK · EVM · CLI · macOS Keychain / pinentry</p>
+            <p class="project-brief">实现 OneKey CLI 的<strong>硬件钱包登录、签名分发和设备管理</strong>，支持 AI 非交互调用场景，使命令行任务能够复用钱包底层能力。</p>
+            <ul>
+              <li><strong>签名路由：</strong>按链和钱包类型组织签名器，将凭据获取下沉至具体实现；抽取 EVM 交易构建逻辑，供客户端与 CLI 共用。</li>
+              <li><strong>非交互调用：</strong>补充隐藏钱包输入模式参数，避免 AI 调用依赖交互式菜单；处理多设备选择与设备绑定，让后续命令定位正确的硬件。</li>
+              <li><strong>会话生命周期：</strong>复用有效的设备会话与隐藏钱包状态，在设备锁定或会话失效后重新认证，减少重复输入并保持钱包上下文一致。</li>
+              <li><strong>凭据与验证：</strong>修复系统凭据存储调用中的密码暴露问题，校验特殊字符输入；覆盖登录、签名器选择、设备锁定恢复和退出清理等流程。</li>
+            </ul>
+          </article>
+
+        </section>
+        <section class="section" aria-labelledby="earlier-heading">
+          <h2 id="earlier-heading">相关工程经历 <span class="pending">早期公司与时间待补充</span></h2>
+          <ul class="earlier">
+            <li><strong>跨端与工程工具：</strong>持续参与 OneKey SDK / App 开发；早期在 TCIC 云课堂与 Nuwa 低代码项目中实践组件化、Schema 配置渲染和远程调试，为 Agent 工具与界面开发提供工程基础。</li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="education-heading">
+          <h2 id="education-heading">教育背景</h2>
+          <!-- 待补充：学校、专业、学历及起止年月。 -->
+          <div class="education-row"><span>学校 / 专业 / 学历：待补充</span><span class="pending">起止年月待补充</span></div>
+        </section>
+        <div class="footer-space" aria-hidden="true"></div>
+        <footer class="footer"><span>蔡凯升 · AI 版</span><span>2 / 2</span></footer>
+      </section>
+    </main>
+  </body>
+</html>
