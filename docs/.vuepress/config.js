@@ -3,6 +3,7 @@ const nav = require("./nav.js");
 module.exports = {
   title: "wabicai的个人空间",
   description: "前端、后端、互联网前沿学习等等",
+  head: [["link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }]],
   theme: "reco",
   markdown: {
     lineNumbers: true,

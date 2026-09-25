@@ -1,122 +1,245 @@
-// 自定义首页样式
-.home
-  // 增强 hero 区域
-  .hero
-    padding 3rem 1.5rem
-    background linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-    color #fff
+// 首页：以项目索引代替主题默认的 Hero 和卡片。
+.theme-container.resume-home
+  --portfolio-surface #f7f7f3
+  --portfolio-ink #202723
+  --portfolio-muted #4f5c53
+  --portfolio-line #d9ded8
+  --portfolio-accent #285e49
+  --portfolio-hover #eff2ec
+  background var(--portfolio-surface)
 
-    img
-      max-width 200px
-      border-radius 50%
-      box-shadow 0 8px 32px rgba(0, 0, 0, 0.1)
-      transition transform 0.3s ease
+  .home
+    box-sizing border-box
+    max-width 1080px
+    padding 8.3rem 2.25rem 5rem
+    color var(--portfolio-ink)
+    font-family -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif
 
-      &:hover
-        transform scale(1.05)
+    > .hero
+      display none
+
+    .home-center
+      max-width none
+      margin 0
+      padding 0
+
+  .sub-sidebar
+    display none
+
+  .navbar
+    box-shadow none
+    border-bottom 1px solid var(--portfolio-line)
+
+  .footer
+    border-top 1px solid var(--portfolio-line)
+    background var(--portfolio-surface)
+    color var(--portfolio-muted)
+
+  .portfolio-intro
+    padding-bottom 3.8rem
 
     h1
-      font-size 3rem
-      color #fff !important
-      text-shadow 2px 2px 4px rgba(0, 0, 0, 0.2)
+      margin 0
+      border 0
+      font-size clamp(2.8rem, 5vw, 4.1rem)
+      font-weight 700
+      line-height 1.15
+      letter-spacing -0.025em
+      color var(--portfolio-ink)
 
-    .description
-      color rgba(255, 255, 255, 0.9) !important
-      font-size 1.4rem
-      margin 1.8rem auto
+    .portfolio-role
+      margin .65rem 0 0
+      font-size clamp(1.35rem, 2.5vw, 1.8rem)
+      font-weight 500
+      line-height 1.45
+      color var(--portfolio-ink)
 
-    .action-button
-      background-color rgba(255, 255, 255, 0.9)
-      color #667eea
-      border none
-      font-weight bold
-      transition all 0.3s ease
-      box-shadow 0 4px 12px rgba(0, 0, 0, 0.15)
+    .portfolio-summary
+      max-width 36em
+      margin 1.6rem 0 0
+      font-size 1.08rem
+      line-height 1.85
+      color var(--portfolio-muted)
 
-      &:hover
-        background-color #fff
-        transform translateY(-2px)
-        box-shadow 0 6px 20px rgba(0, 0, 0, 0.2)
-
-  // 美化 features 区域
-  .features
-    padding 2.5rem 1.5rem
-    max-width 1200px
-
-    .feature
-      flex-basis calc(33.33% - 2rem)
-      padding 1.5rem
-      border-radius 12px
-      background #fff
-      box-shadow 0 2px 12px rgba(0, 0, 0, 0.08)
-      transition all 0.3s ease
-      border 1px solid #eaecef
-
-      &:hover
-        transform translateY(-5px)
-        box-shadow 0 8px 24px rgba(0, 0, 0, 0.12)
-        border-color #667eea
-
-      h2
-        color #667eea
-        font-size 1.3rem
-        border-bottom none
-        padding-bottom 0
-
-      p
-        color #4e6e8e
-        line-height 1.7
-
-  // 美化内容区域
-  .theme-default-content
-    max-width 960px
-
-    h2
-      border-bottom 2px solid #667eea
-      padding-bottom 0.5rem
+  .portfolio-intro-links
+    display flex
+    flex-wrap wrap
+    gap .7rem 1.65rem
+    margin-top 1.8rem
 
     a
-      color #667eea
+      padding-bottom .15rem
+      border-bottom 1px solid currentColor
+      font-size .95rem
       font-weight 500
-      transition color 0.3s ease
+      color var(--portfolio-accent)
+      text-decoration none
+      text-underline-offset .2em
 
       &:hover
-        color #764ba2
-        text-decoration underline
+        color var(--portfolio-ink)
 
-    blockquote
-      border-left 4px solid #667eea
-      background-color #f3f5f7
-      padding 1rem 1.5rem
-      border-radius 4px
+  .portfolio-work
+    h2
+      margin 0 0 1rem
+      border 0
+      font-size 1.45rem
+      font-weight 650
+      color var(--portfolio-ink)
 
-      p
-        margin 0
-        color #4e6e8e
+  .portfolio-project-list
+    border-top 1px solid var(--portfolio-line)
 
-  // 美化 footer
-  .footer
-    padding 2rem
-    border-top 1px solid #eaecef
-    color #4e6e8e
-    background-color #f8f9fa
+  .portfolio-project
+    display grid
+    grid-template-columns 2.6rem minmax(0, 1fr) 13rem
+    align-items start
+    gap 1rem
+    padding 1.4rem .35rem 1.5rem
+    border-bottom 1px solid var(--portfolio-line)
+    color var(--portfolio-ink)
+    text-decoration none
+    transition background-color .18s ease-out
 
-// 响应式优化
-@media (max-width: 719px)
-  .home
-    .hero
-      h1
-        font-size 2rem
+    &:hover
+      background var(--portfolio-hover)
+      text-decoration none
 
-      .description
-        font-size 1.2rem
+      .portfolio-project-main strong
+        color var(--portfolio-accent)
 
-    .features
-      .feature
-        flex-basis 100%
-        margin-bottom 1rem
+    &:focus-visible
+      outline 2px solid var(--portfolio-accent)
+      outline-offset 2px
 
-// 滚动条美化
+  .portfolio-project-number
+    padding-top .2rem
+    font-family ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
+    font-size .8rem
+    font-variant-numeric tabular-nums
+    color var(--portfolio-muted)
+
+  .portfolio-project-main
+    display flex
+    flex-direction column
+    gap .35rem
+    min-width 0
+
+    strong
+      font-size 1.13rem
+      font-weight 650
+      line-height 1.45
+      color var(--portfolio-ink)
+
+    span
+      font-size .96rem
+      line-height 1.65
+      color var(--portfolio-muted)
+
+  .portfolio-project-meta
+    padding-top .23rem
+    font-size .82rem
+    line-height 1.55
+    text-align right
+    color var(--portfolio-muted)
+
+  .portfolio-notes
+    display grid
+    grid-template-columns minmax(0, 1fr) minmax(0, 1.7fr)
+    gap 2.5rem
+    margin-top 5rem
+    padding-top 2rem
+    border-top 1px solid var(--portfolio-line)
+
+    h2
+      margin 0
+      border 0
+      font-size 1.45rem
+      font-weight 650
+      color var(--portfolio-ink)
+
+    p
+      margin .5rem 0 0
+      font-size .94rem
+      line-height 1.7
+      color var(--portfolio-muted)
+
+    ul
+      display grid
+      grid-template-columns repeat(2, minmax(0, 1fr))
+      gap .9rem 1.5rem
+      margin 0
+      padding 0
+      list-style none
+
+    li
+      margin 0
+
+    a
+      color var(--portfolio-accent)
+      font-size .94rem
+      line-height 1.6
+      text-decoration underline
+      text-decoration-color var(--portfolio-line)
+      text-underline-offset .25em
+
+      &:hover
+        color var(--portfolio-ink)
+        text-decoration-color currentColor
+
+  ::selection
+    background #cfe2d5
+    color var(--portfolio-ink)
+
+html.dark .theme-container.resume-home
+  --portfolio-surface #1b201d
+  --portfolio-ink #edf1ec
+  --portfolio-muted #b2beb4
+  --portfolio-line #3a453c
+  --portfolio-accent #a1d5b4
+  --portfolio-hover #252d27
+
+  ::selection
+    background #41664f
+    color #fff
+
+@media (max-width: 800px)
+  .theme-container.resume-home
+    .home
+      padding-top 7rem
+
+    .portfolio-project
+      grid-template-columns 2rem minmax(0, 1fr)
+      gap .4rem .9rem
+
+    .portfolio-project-meta
+      grid-column 2
+      padding-top 0
+      text-align left
+
+@media (max-width: 600px)
+  .theme-container.resume-home
+    .home
+      padding 6.6rem 1.3rem 3.5rem
+
+    .portfolio-intro
+      padding-bottom 3rem
+
+      .portfolio-summary
+        font-size 1rem
+
+    .portfolio-project
+      padding 1.25rem 0
+
+    .portfolio-notes
+      grid-template-columns 1fr
+      gap 1.25rem
+      margin-top 3.7rem
+
+      ul
+        grid-template-columns 1fr
+
+// 保留站点原有的滚动条样式，避免影响文章页。
 ::-webkit-scrollbar
   width 8px
   height 8px
