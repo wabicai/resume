@@ -68,7 +68,7 @@ module.exports = [
     items: [
       {
         text: "📖 学习指南",
-        link: "/量化与AI/README",
+        link: "/量化与AI/",
       },
       {
         text: "1️⃣ 快速入门",
@@ -100,8 +100,8 @@ module.exports = [
     text: "项目简历",
     items: [
       {
-        text: "wabicai",
-        link: "/resume",
+        text: "项目作品",
+        link: "/portfolio/",
       },
     ],
   },
