@@ -1,42 +1,39 @@
 ---
 home: true
-heroText: wabicai的计算机生涯杂记
-tagline: 前端、后端、计算机基础、量化交易与AI全栈知识体系
+heroText: 蔡凯升｜全栈与 Web3 工程
+tagline: 硬件钱包 SDK · 跨端应用 · B2B 服务 · 硬件自动化
 heroImage: null
 bgImage: null
 bgImageStyle: {
   height: '450px'
 }
 isShowTitleInHome: true
-actionText: 开始探索 →
-actionLink: /intro
+actionText: 查看完整项目 →
+actionLink: /portfolio/
 features:
-- title: 🎨 前端技术栈
-  details: 深入探索HTML/CSS/JavaScript、Vue/React等框架、工程化实践，从基础到进阶的完整学习路径。
-- title: ⚙️ 后端开发
-  details: Golang编程、数据库设计与优化、系统架构设计，打造高性能服务端应用。
-- title: 💻 计算机基础
-  details: 操作系统、网络协议、数据结构与算法、设计模式等核心知识，夯实技术根基。
-- title: 🚀 项目实战
-  details: 真实项目经验分享，前后端实践案例，从问题到解决方案的完整复盘。
-- title: 📊 量化与AI
-  details: 量化交易策略、机器学习模型、深度学习应用，探索AI在金融领域的实践。
-- title: 📝 持续更新
-  details: 记录学习历程，分享技术心得，与你一起成长进步。
+- title: 硬件钱包 SDK 与跨端 App
+  details: 参与 OneKey Pro2 / Neo 的协议与传输接入，处理设备连接、地址调用、固件升级和跨端状态恢复。
+- title: 合作伙伴商店
+  details: 在 Next.js 商店、管理后台和 Medusa v2 服务中处理目录、定价、订单、支付与登录。
+- title: 硬件自动化与生产工具
+  details: 用 MCP 控制真机、OCR 识别屏幕；另用 Electron / React 做产线操作界面。
 ---
 
-## 简历与项目作品
+## 代表项目
 
-我在 OneKey 从事全栈与 Web3 工程，涵盖硬件钱包 SDK、跨端 App、合作伙伴商店和 AI 辅助研发。[阅读项目作品](/portfolio/)，或打开可打印的 [AI 与 Web3 版](/resume.html)和[全栈业务版](/resume-business.html)。
+- **硬件钱包 SDK 与跨端 App：** 参与 Protocol V2 接入，排查 WebUSB、BLE 和 React Native 传输中的连接与会话问题，并验证 App 中的设备流程。
+- **合作伙伴商店：** 在页面、API 与订单工作流之间追踪商品目录、定价、结算和登录续接问题。
+- **MCP 硬件自动化：** 连接设备控制、摄像头截图与 OCR 屏幕识别，让自动步骤以真机反馈和人工复核为依据。
+- **工厂生产工具：** 搭建 Electron / React 操作界面，复用 Python CLI，组织卡片检测、写入、核对和打印流程。
 
-## 💡 快速导航
+想看每个项目具体做了什么、怎么验证，见[完整项目作品](/portfolio/)；也可以直接打开可打印的 [AI 与 Web3 版简历](/resume.html)或[全栈业务版简历](/resume-business.html)。
 
-- [前端技术](/前端/基础知识/1.静态语言和非静态语言.md) - 从基础到框架的完整前端知识体系
-- [后端开发](/后端/Golang/1.javascript与Golang中类型的异同.md) - Golang与数据库实战
-- [计算机基础](/计算机基础/核心知识/1.进程和线程的区别.md) - 操作系统、网络、算法等核心知识
-- [项目实战](/项目实战/前端实践/优化-使用IndexDB解决Svga重复加载问题.md) - 真实项目经验与优化方案
-- [量化与AI](/量化与AI/2.量化交易基础/1.量化交易概述与核心概念.md) - 量化交易与AI模型实践
+## 技术笔记
 
----
+项目之外，我也把学过、用过的基础知识记在这里，方便回头查。
 
-> 💬 本站持续更新中，欢迎交流学习！
+- [Go：Context、超时与取消](/后端/Golang/3.context与超时取消.html)
+- [Python：虚拟环境与异常处理](/后端/Python/1.虚拟环境与异常处理.html)
+- [服务端：HTTP 接口与幂等](/后端/服务端基础/1.HTTP接口与幂等.html)
+- [运维：Linux 服务部署与排障](/计算机基础/工具与规范/3.Linux服务部署与排障.html)
+- [更多计算机基础](/计算机基础/核心知识/1.进程和线程的区别.html) · [前端笔记](/前端/基础知识/1.静态语言和非静态语言.html) · [量化与 AI](/量化与AI/)

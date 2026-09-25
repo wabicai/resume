@@ -28,6 +28,14 @@ module.exports = [
         link: "/后端/Golang/1.javascript与Golang中类型的异同",
       },
       {
+        text: "Python",
+        link: "/后端/Python/1.虚拟环境与异常处理",
+      },
+      {
+        text: "服务端基础",
+        link: "/后端/服务端基础/1.HTTP接口与幂等",
+      },
+      {
         text: "数据库",
         link: "/后端/数据库/1.基础命令",
       },
@@ -43,6 +51,10 @@ module.exports = [
       {
         text: "工具与规范",
         link: "/计算机基础/工具与规范/1.git",
+      },
+      {
+        text: "运维基础",
+        link: "/计算机基础/工具与规范/3.Linux服务部署与排障",
       },
     ],
   },

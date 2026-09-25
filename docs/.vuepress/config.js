@@ -106,7 +106,7 @@ module.exports = {
     ],
   ],
   themeConfig: {
-    type: "blog",
+    type: "Home",
     nav,
     // 友情链接
     friendLink: [
