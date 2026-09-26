@@ -8,7 +8,7 @@ permalink: /portfolio/
 
 **求职方向：**全栈工程师、Web3 / 钱包工程师，以及需要把 AI 工具接入实际研发流程的工程岗位。
 
-**作品与代码：**[GitHub / wabicai](https://github.com/wabicai) · [AI 与自动化版简历](/resume.html) · [业务研发版简历](/resume-business.html)
+**作品与代码：**[GitHub / wabicai](https://github.com/wabicai) · [项目简历](/resume.html)
 
 ## 我做过的工程
 
@@ -66,4 +66,4 @@ AI 是研发流程中的协作工具。以下写的是工具在流程里的位�
 - 明确个人职责与团队成果，不虚构性能数字或上线效果。
 - 在网页、桌面、移动端和硬件之间保留可诊断的状态、日志与恢复路径。
 
-想快速浏览可打印版本，请打开 [AI 与自动化版](/resume.html) 或 [业务研发版](/resume-business.html)。
+想快速浏览可打印版本，请打开 [项目简历](/resume.html)。

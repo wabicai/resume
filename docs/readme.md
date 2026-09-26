@@ -11,8 +11,7 @@ tagline: null
   <p class="portfolio-summary">在 OneKey 做硬件钱包 SDK、跨端应用和合作伙伴系统。工作从设备协议延伸到 Web、服务端与生产工具。</p>
   <nav class="portfolio-intro-links" aria-label="作品与简历">
     <a href="/portfolio/">完整项目经历</a>
-    <a href="/resume.html">AI 与 Web3 版简历</a>
-    <a href="/resume-business.html">全栈业务版简历</a>
+    <a href="/resume.html">项目简历</a>
     <a href="https://github.com/wabicai" target="_blank" rel="noopener noreferrer">GitHub</a>
   </nav>
 </section>
